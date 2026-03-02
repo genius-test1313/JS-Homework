@@ -1,51 +1,35 @@
+/* Базовый сброс отступов для всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Настройки для всего тела сайта */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Шрифт для обычного текста */
+  background-color: #FFFFFF;
+  color: #333333;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+/* Красивый элегантный шрифт для всех заголовков */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif; 
 }
 
-main {
-    padding: 1rem;
+/* Чтобы картинки не вылезали за пределы своих блоков */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-#characters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+/* Убираем подчеркивание у ссылок и точки у списков */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.character {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.character img {
-    width: 100%;
-    height: auto;
-}
-
-.character:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-.character-info {
-    display: none;
-}
-
-.character:hover .character-info {
-    display: block;
+ul {
+  list-style: none;
 }
