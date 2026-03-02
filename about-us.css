@@ -4,103 +4,88 @@
    ========================================= */
 
 .about-us {
-  /* Замени цвет фона на тот, что в Фигме. Я поставил примерный светло-голубой */
-  background-color: #F0F6F8; 
-  /* Отступы сверху и снизу секции (посмотри точные в Фигме) */
-  padding-top: 60px; 
-  padding-bottom: 60px;
-  /* Центрируем весь текст внутри секции, как на макете */
-  text-align: center; 
+  background-color: #F2F6F7; /* Тот самый светлый фон с макета */
+  padding: 60px 0; /* Отступы сверху и снизу */
+  text-align: center;
 }
 
-/* --- Заголовки --- */
 .about-title {
-  font-size: 28px; /* Возьми точный размер из Фигмы */
-  font-weight: 500;
-  margin-bottom: 16px;
-  color: #111111; /* Точный цвет из Фигмы */
+  font-size: 28px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 12px;
 }
 
 .about-subtitle {
-  font-size: 14px; /* Точный размер из Фигмы */
+  font-size: 14px;
+  color: #333333;
   margin-bottom: 40px;
-  color: #333333; /* Точный цвет из Фигмы */
 }
 
-/* --- Список карток --- */
 .about-list {
-  list-style: none; /* Убираем стандартные точки списка */
+  list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 40px; /* Отступ от списка до кнопки */
-  
-  /* Делаем список гибким (flex) и ставим элементы в колонку */
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Расстояние между карточками на мобилке (взять из Фигмы) */
+  gap: 32px; /* Расстояние между карточками */
 }
 
-/* --- Сама карточка (Article) --- */
 .about-card-title {
-  font-size: 20px; /* Точный размер из Фигмы */
+  font-size: 18px;
+  font-weight: 600;
+  color: #111111;
   margin-bottom: 12px;
-  font-weight: 500;
 }
 
 .about-card-text {
-  font-size: 14px; /* Точный размер из Фигмы */
-  line-height: 1.5; /* Межстрочный интервал (взять из Фигмы) */
-  color: #555555; /* Точный цвет из Фигмы */
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4A4A4A;
 }
 
-/* --- Кнопка (Join Now) --- */
 .about-btn {
-  /* Чтобы кнопка слушалась отступов и размеров, делаем ее inline-block */
-  display: inline-block; 
-  /* Цвет фона кнопки (взять точный из Фигмы) */
-  background-color: #C1D5FE; 
+  display: inline-block;
+  background-color: #C1D5FE; /* Голубая кнопка */
   color: #111111;
-  text-decoration: none; /* Убираем нижнее подчеркивание ссылки */
-  
-  /* Внутренние отступы (сверху/снизу и по бокам). Взять из Фигмы! */
-  padding: 12px 32px; 
-  /* Скругляем углы, чтобы была "таблеткой" */
-  border-radius: 30px; 
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 30px;
   font-weight: 500;
-  
-  /* Плавный переход для эффекта при наведении мышки */
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
-/* Эффект при наведении (hover) на кнопку */
 .about-btn:hover,
 .about-btn:focus {
-  background-color: #A3C0FC; /* Сделать чуть темнее, чем основной цвет */
+  background-color: #A3C0FC;
 }
-
-
 
 /* =========================================
    Планшет (Tablet: від 768px до 1335px)
    ========================================= */
 @media screen and (min-width: 768px) {
-  
   .about-us {
-    /* На планшете отступы секции обычно больше, проверь в Фигме */
-    padding-top: 80px; 
-    padding-bottom: 80px;
+    padding: 80px 0;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+    margin-bottom: 50px;
   }
 
   .about-list {
-    /* Меняем направление на строку (в ряд) и разрешаем перенос на новую строку */
     flex-direction: row;
     flex-wrap: wrap;
-    /* Расстояние между колонками и строками (посмотри точное в Фигме!) */
-    gap: 32px; 
+    gap: 32px;
   }
 
   .about-item {
-    /* Математика: ширина 50% минус половина отступа (gap), чтобы влезло ровно 2 карточки */
+    /* 2 колонки */
     width: calc((100% - 32px) / 2);
   }
 }
@@ -109,21 +94,21 @@
    Десктоп (Desktop: від 1336px)
    ========================================= */
 @media screen and (min-width: 1336px) {
-  
   .about-us {
-    /* На десктопе отступы секции еще больше */
-    padding-top: 100px; 
-    padding-bottom: 100px;
+    padding: 100px 0;
+  }
+
+  .about-title {
+    font-size: 40px;
   }
 
   .about-list {
-    /* На десктопе все карточки в один ряд, запрещаем перенос */
     flex-wrap: nowrap;
-    gap: 24px; /* Посмотри точное расстояние между 4 карточками в Фигме */
+    gap: 24px;
   }
 
   .about-item {
-    /* Карточек 4, значит каждая занимает примерно 25% (с учетом отступов) */
-    width: calc((100% - (24px * 3)) / 4); 
+    /* 4 колонки. Отнимаем 3 отступа по 24px (это 72px) и делим на 4 */
+    width: calc((100% - 72px) / 4);
   }
 }
