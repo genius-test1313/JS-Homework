@@ -4,8 +4,8 @@
    ========================================= */
 
 .about-us {
-  background-color: #F2F6F7; /* Тот самый светлый фон с макета */
-  padding: 60px 0; /* Отступы сверху и снизу */
+  background-color: #F2FAFA; /* Твій колір фону з макету */
+  padding: 60px 0; 
   text-align: center;
 }
 
@@ -29,7 +29,7 @@
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Расстояние между карточками */
+  gap: 32px; 
 }
 
 .about-card-title {
@@ -45,20 +45,22 @@
   color: #4A4A4A;
 }
 
+/* Стилі кнопки з твоїми точними даними */
 .about-btn {
   display: inline-block;
-  background-color: #C1D5FE; /* Голубая кнопка */
+  background-color: #C2D9FC; 
   color: #111111;
   text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 30px;
+  padding: 10px 24px; 
+  border-radius: 100px; 
+  border: 1px solid transparent; 
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
 .about-btn:hover,
 .about-btn:focus {
-  background-color: #A3C0FC;
+  background-color: #A3C0FC; /* Трохи темніший для ефекту при наведенні мишки */
 }
 
 /* =========================================
@@ -85,7 +87,6 @@
   }
 
   .about-item {
-    /* 2 колонки */
     width: calc((100% - 32px) / 2);
   }
 }
@@ -108,7 +109,6 @@
   }
 
   .about-item {
-    /* 4 колонки. Отнимаем 3 отступа по 24px (это 72px) и делим на 4 */
     width: calc((100% - 72px) / 4);
   }
 }
