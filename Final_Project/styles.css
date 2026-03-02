@@ -1,35 +1,123 @@
-/* Базовый сброс отступов для всех элементов */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- ЗМІННІ (Кольори проєкту) --- */
+:root {
+  --primary-purple: #9b51e0;
+  --light-purple: #a866e5;
+  --dark-text: #333333;
+  --gray-text: #888888;
+  --white: #ffffff;
 }
 
-/* Настройки для всего тела сайта */
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  font-family: 'Inter', sans-serif; /* Шрифт для обычного текста */
-  background-color: #FFFFFF;
-  color: #333333;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-text);
+  background-color: var(--white);
+  line-height: 1.5;
 }
 
-/* Красивый элегантный шрифт для всех заголовков */
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif; 
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+img { display: block; max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+a:hover { opacity: 0.7; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Чтобы картинки не вылезали за пределы своих блоков */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.text-purple { color: var(--primary-purple); }
+.text-gray { color: var(--gray-text); }
+.fw-bold { font-weight: 600; }
+
+/* --- ШАПКА (HEADER) --- */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
 }
 
-/* Убираем подчеркивание у ссылок и точки у списков */
-a {
-  text-decoration: none;
-  color: inherit;
+.logo img { height: 24px; }
+
+.nav-list { display: flex; gap: 30px; }
+.nav-link { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
+
+/* --- ГОЛОВНИЙ ЕКРАН (HERO) --- */
+.hero { padding: 50px 0 100px; }
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-ul {
-  list-style: none;
+.hero-content { flex: 1; }
+.hero-title {
+  font-size: 64px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.hero-links { display: flex; gap: 30px; }
+.action-link {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero-image-box {
+  flex: 1;
+  position: relative; /* Щоб таймер міг "наїхати" на фото */
+}
+
+/* Таймер */
+.timer-badge {
+  position: absolute;
+  bottom: -30px;
+  left: -50px;
+  background-color: var(--white);
+  padding: 20px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.timer-subtitle { font-size: 12px; margin-bottom: 10px; }
+.timer-clock { display: flex; gap: 15px; background-color: var(--primary-purple); color: var(--white); padding: 10px 20px; border-radius: 4px; }
+.time-item { display: flex; flex-direction: column; align-items: center; }
+.time-num { font-size: 24px; font-weight: 600; }
+.time-text { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- БЛОК ПОСЛУГ (SERVICES) --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+}
+
+.service-card {
+  background-color: var(--light-purple);
+  color: var(--white);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-center { background-color: var(--primary-purple); } /* Центральна картка трохи темніша */
+
+.service-title { font-size: 28px; margin-bottom: 20px; }
+.service-price { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 20px; opacity: 0.8; }
+.service-img { margin-bottom: 30px; border-radius: 4px; }
+.service-link { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- АДАПТИВ ДЛЯ ТЕЛЕФОНІВ (MOBILE) --- */
+@media (max-width: 900px) {
+  .hero-container { flex-direction: column; text-align: center; }
+  .hero-title { font-size: 42px; }
+  .hero-links { justify-content: center; }
+  .timer-badge { left: 50%; transform: translateX(-50%); bottom: -50px; width: 90%; text-align: center; }
+  .services-grid { grid-template-columns: 1fr; /* 1 колонка на телефоні */ }
 }
