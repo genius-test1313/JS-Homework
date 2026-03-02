@@ -19,7 +19,7 @@
 .about-subtitle {
   font-size: 14px;
   color: #333333;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
 .about-list {
@@ -32,19 +32,27 @@
   gap: 32px; 
 }
 
+/* Оновлені стилі заголовків карток за твоїми скрінами! */
 .about-card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111111;
+  font-family: 'Cabin', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: #0D0B0A;
   margin-bottom: 12px;
 }
 
+/* Оновлені стилі тексту карток за твоїми скрінами! */
 .about-card-text {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #4A4A4A;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #0D0B0A;
 }
 
+/* Стилі кнопки */
 .about-btn {
   display: inline-block;
   background-color: #C2D9FC; 
@@ -95,7 +103,7 @@
    ========================================= */
 @media screen and (min-width: 1336px) {
   .about-us {
-    padding: 112px 0;
+    padding: 112px 0; 
   }
 
   .about-title {
@@ -104,7 +112,7 @@
 
   .about-list {
     flex-wrap: nowrap;
-    gap: 64px;
+    gap: 64px; 
   }
 
   .about-item {
