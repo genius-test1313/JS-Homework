@@ -10,29 +10,32 @@
 }
 
 .about-title {
+  font-family: 'Cabin', sans-serif;
   font-size: 28px;
   font-weight: 600;
-  color: #111111;
+  color: #0D0B0A;
   margin-bottom: 12px;
 }
 
 .about-subtitle {
-  font-size: 14px;
-  color: #333333;
-  margin-bottom: 40px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 18px; /* Точний розмір з макету! */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #0D0B0A;
+  margin-bottom: 24px; /* Точний відступ з макету! */
 }
 
 .about-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 40px; 
+  margin-bottom: 32px; 
   display: flex;
   flex-direction: column;
   gap: 32px; 
 }
 
-/* Оновлені стилі заголовків карток за твоїми скрінами! */
 .about-card-title {
   font-family: 'Cabin', sans-serif;
   font-size: 28px;
@@ -43,7 +46,6 @@
   margin-bottom: 12px;
 }
 
-/* Оновлені стилі тексту карток за твоїми скрінами! */
 .about-card-text {
   font-family: 'Sarabun', sans-serif;
   font-size: 16px;
@@ -55,13 +57,16 @@
 /* Стилі кнопки */
 .about-btn {
   display: inline-block;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px; /* Точний розмір! */
+  font-weight: 500; /* Точна жирність! */
+  line-height: 1.6;
   background-color: #C2D9FC; 
-  color: #111111;
+  color: #0D0B0A; /* Точний колір тексту! */
   text-decoration: none;
   padding: 10px 24px; 
   border-radius: 100px; 
   border: 1px solid #C2D9FC; 
-  font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
@@ -80,11 +85,6 @@
 
   .about-title {
     font-size: 36px;
-  }
-
-  .about-subtitle {
-    font-size: 16px;
-    margin-bottom: 50px;
   }
 
   .about-list {
@@ -113,6 +113,7 @@
   .about-list {
     flex-wrap: nowrap;
     gap: 64px; 
+    margin-bottom: 40px;
   }
 
   .about-item {
