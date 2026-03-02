@@ -1,4 +1,4 @@
-/* --- ЗМІННІ (Кольори проєкту) --- */
+/* --- VARIABLES --- */
 :root {
   --primary-purple: #9b51e0;
   --light-purple: #a866e5;
@@ -7,7 +7,7 @@
   --white: #ffffff;
 }
 
-/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+/* --- BASE SETTINGS --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -15,12 +15,12 @@ body {
   color: var(--dark-text);
   background-color: var(--white);
   line-height: 1.5;
+  overflow-x: hidden; /* Щоб нічого не вилазило за краї на мобілках */
 }
 
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
 img { display: block; max-width: 100%; height: auto; }
-a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-a:hover { opacity: 0.7; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
 .container {
@@ -33,91 +33,94 @@ ul { list-style: none; }
 .text-gray { color: var(--gray-text); }
 .fw-bold { font-weight: 600; }
 
-/* --- ШАПКА (HEADER) --- */
+/* --- HEADER --- */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
 }
-
 .logo img { height: 24px; }
-
 .nav-list { display: flex; gap: 30px; }
 .nav-link { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
 
-/* --- ГОЛОВНИЙ ЕКРАН (HERO) --- */
+/* --- HERO --- */
 .hero { padding: 50px 0 100px; }
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
+.hero-container { display: flex; align-items: center; gap: 40px; }
 .hero-content { flex: 1; }
-.hero-title {
-  font-size: 64px;
-  line-height: 1.2;
-  margin-bottom: 40px;
-}
-
+.hero-title { font-size: 64px; line-height: 1.1; margin-bottom: 40px; }
 .hero-links { display: flex; gap: 30px; }
-.action-link {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+.action-link { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
 
-.hero-image-box {
-  flex: 1;
-  position: relative; /* Щоб таймер міг "наїхати" на фото */
-}
-
-/* Таймер */
+.hero-image-box { flex: 1; position: relative; }
 .timer-badge {
   position: absolute;
-  bottom: -30px;
-  left: -50px;
-  background-color: var(--white);
-  padding: 20px 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  bottom: -20px;
+  left: -40px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   border-radius: 4px;
+  z-index: 5;
 }
-
-.timer-subtitle { font-size: 12px; margin-bottom: 10px; }
-.timer-clock { display: flex; gap: 15px; background-color: var(--primary-purple); color: var(--white); padding: 10px 20px; border-radius: 4px; }
+.timer-subtitle { font-size: 11px; margin-bottom: 10px; }
+.timer-clock { display: flex; gap: 15px; background: var(--primary-purple); color: var(--white); padding: 10px 20px; border-radius: 4px; }
 .time-item { display: flex; flex-direction: column; align-items: center; }
-.time-num { font-size: 24px; font-weight: 600; }
-.time-text { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.time-num { font-size: 20px; font-weight: 600; }
+.time-text { font-size: 9px; text-transform: uppercase; }
 
-/* --- БЛОК ПОСЛУГ (SERVICES) --- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-}
-
-.service-card {
-  background-color: var(--light-purple);
-  color: var(--white);
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-center { background-color: var(--primary-purple); } /* Центральна картка трохи темніша */
-
-.service-title { font-size: 28px; margin-bottom: 20px; }
+/* --- SERVICES --- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.service-card { background: var(--light-purple); color: var(--white); padding: 60px 40px; transition: 0.3s; }
+.card-center { background: var(--primary-purple); }
+.service-title { font-size: 26px; margin-bottom: 20px; }
 .service-price { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 20px; opacity: 0.8; }
-.service-img { margin-bottom: 30px; border-radius: 4px; }
-.service-link { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.price-badge { border: 1px solid var(--white); padding: 2px 8px; border-radius: 10px; }
+.service-img { margin-bottom: 30px; border-radius: 4px; filter: grayscale(20%); }
+.service-link { font-size: 12px; text-transform: uppercase; font-weight: 600; }
 
-/* --- АДАПТИВ ДЛЯ ТЕЛЕФОНІВ (MOBILE) --- */
-@media (max-width: 900px) {
+/* --- PROMO --- */
+.promo { padding: 120px 0; }
+.promo-box {
+  background: var(--primary-purple);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 450px;
+}
+.promo-content {
+  background: var(--white);
+  padding: 60px;
+  width: 55%;
+  margin-left: -30px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+  border-radius: 4px;
+  z-index: 2;
+}
+.promo-badge { background: var(--primary-purple); color: var(--white); font-size: 10px; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
+.promo-title { font-size: 38px; color: var(--primary-purple); margin: 25px 0; line-height: 1.2; }
+.promo-desc, .promo-ingredients { font-size: 14px; color: var(--gray-text); margin-bottom: 20px; }
+.promo-btn { display: inline-block; border: 1px solid var(--primary-purple); color: var(--primary-purple); padding: 12px 25px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-radius: 4px; }
+.promo-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 115%; /* Дівчина вилазить за межі */
+  z-index: 1;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 992px) {
   .hero-container { flex-direction: column; text-align: center; }
-  .hero-title { font-size: 42px; }
+  .hero-title { font-size: 48px; }
   .hero-links { justify-content: center; }
-  .timer-badge { left: 50%; transform: translateX(-50%); bottom: -50px; width: 90%; text-align: center; }
-  .services-grid { grid-template-columns: 1fr; /* 1 колонка на телефоні */ }
+  .timer-badge { left: 50%; transform: translateX(-50%); width: 100%; bottom: -40px; }
+  
+  .services-grid { grid-template-columns: 1fr; }
+  
+  .promo { padding: 60px 0; }
+  .promo-box { flex-direction: column; margin-top: 50px; padding-top: 50px; }
+  .promo-content { width: 90%; margin: 0 auto 30px; padding: 40px 20px; text-align: center; }
+  .promo-img { position: relative; height: auto; width: 100%; max-width: 400px; margin-top: -50px; }
 }
