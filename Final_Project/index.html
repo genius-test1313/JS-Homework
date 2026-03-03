@@ -3,169 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Day Beauty | Beauty & Treatment Store</title>
+  <title>Orange Dark Dashboard</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-container">
-      <a href="#" class="logo">
-        <img src="./images/logo.png" alt="The Day Beauty">
-      </a>
-      <nav class="navigation">
+  <div class="dashboard-container">
+    
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="./images/Soibi-Bobo.png" alt="Soibi-Bobo" class="profile-img">
+        <span class="profile-name">Soibi-Bobo</span>
+      </div>
+
+      <nav class="sidebar-nav">
         <ul class="nav-list">
-          <li><a href="#" class="nav-link">REGISTER &rarr;</a></li>
-          <li><a href="#" class="nav-link">PRICING &rarr;</a></li>
+          <li class="nav-item active"><a href="#" class="nav-link"><img src="./images/Home.svg" alt="Home" class="nav-icon"><span>Home</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Budget.svg" alt="Budget" class="nav-icon"><span>Budget</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Transactions.svg" alt="Transactions" class="nav-icon"><span>Transactions</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Subscriptions.svg" alt="Subscriptions" class="nav-icon"><span>Subscriptions</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Loans.svg" alt="Loans" class="nav-icon"><span>Loans</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Reports.svg" alt="Reports" class="nav-icon"><span>Reports</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Savings.svg" alt="Savings" class="nav-icon"><span>Savings</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Financial advice.svg" alt="Financial advice" class="nav-icon"><span>Financial advice</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Account.svg" alt="Account" class="nav-icon"><span>Account</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><img src="./images/Settings.svg" alt="Settings" class="nav-icon"><span>Settings</span></a></li>
         </ul>
       </nav>
-    </div>
-  </header>
+    </aside>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Never Forget<br>
-            How <span class="text-purple">Beautiful</span><br>
-            You Are
-          </h1>
-          <div class="hero-links">
-            <a href="#" class="action-link">REGISTER &rarr;</a>
-            <a href="#" class="action-link text-gray">PRICING &rarr;</a>
-          </div>
+    <main class="main-content">
+      
+      <header class="header">
+        <h1 class="page-title">Home</h1>
+        <div class="header-actions">
+          <button class="icon-btn"><img src="./images/glass.svg" alt="Search"></button>
+          <button class="icon-btn">
+            <img src="./images/bell.svg" alt="Notifications">
+            <span class="notification-dot"></span>
+          </button>
         </div>
+      </header>
 
-        <div class="hero-image-box">
-          <img src="./images/hero.png" alt="Beautiful Woman" class="hero-img">
-          
-          <div class="timer-badge">
-            <p class="timer-subtitle">
-              <span class="text-purple fw-bold">Grand Opening</span> All items are 25% Discount for New Member!
-            </p>
-            <div class="timer-clock">
-              <div class="time-item"><span class="time-num">20</span><span class="time-text">hours</span></div>
-              <div class="time-separator">:</div>
-              <div class="time-item"><span class="time-num">10</span><span class="time-text">minutes</span></div>
-              <div class="time-separator">:</div>
-              <div class="time-item"><span class="time-num">05</span><span class="time-text">seconds</span></div>
+      <div class="cards-grid">
+        
+        <div class="card item-cards">
+          <div class="card-header">
+            <h3>Cards</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="bank-card">
+            <p class="bc-label">Balance</p>
+            <h2 class="bc-balance">₦ 22,000</h2>
+            <div class="bc-footer">
+              <div class="bc-details">
+                <p class="bc-number">**** **** **** 1234</p>
+                <p class="bc-expiry">Expires <span>12/22</span></p>
+              </div>
+              <img src="./images/MasterCard.svg" alt="Mastercard" class="bc-logo">
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="services">
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-title">Swedish Deep<br>Tissue Massage</h3>
-          <div class="service-price">
-            <span class="price-val">Rp. 550.000,00</span>
-            <span class="price-badge">SPA. 01</span>
+        <div class="card item-transactions">
+          <div class="card-header">
+            <h3>All Transactions</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
           </div>
-          <img src="./images/service-1.png" alt="Massage" class="service-img">
-          <a href="#" class="service-link">Order now &rarr;</a>
-        </div>
-
-        <div class="service-card card-center">
-          <h3 class="service-title">Facials Massage<br>with Scrubs</h3>
-          <div class="service-price">
-            <span class="price-val">Rp. 950.000,00</span>
-            <span class="price-badge">SPA. 02</span>
-          </div>
-          <img src="./images/service-2.png" alt="Facial" class="service-img">
-          <a href="#" class="service-link">Order now &rarr;</a>
-        </div>
-
-        <div class="service-card">
-          <h3 class="service-title">Body Treatments<br>with Scrubs</h3>
-          <div class="service-price">
-            <span class="price-val">Rp. 650.000,00</span>
-            <span class="price-badge">SPA. 03</span>
-          </div>
-          <img src="./images/service-3.png" alt="Body Treatment" class="service-img">
-          <a href="#" class="service-link">Order now &rarr;</a>
-        </div>
-      </div>
-      
-      <div class="services-footer">
-        <a href="#" class="btn-more">More services</a>
-      </div>
-    </section>
-
-    <section class="promo">
-      <div class="container">
-        <div class="promo-box">
-          <div class="promo-content">
-            <div class="promo-badge">Exclusive product</div>
-            <h2 class="promo-title">Moisturizer Sugar Scrubs</h2>
-            <p class="promo-desc">Sugar scrubs brighten tired, dull-looking skin to promote healthy, smooth, and flawless skin. Sugar scrubs also fight skin aging in a natural way.</p>
-            <p class="promo-ingredients"><span class="fw-bold text-purple">Ingredients:</span> brown sugar, coconut, jojoba, olive, almond, or grapeseed.</p>
-            <a href="#" class="promo-btn">Learn more</a>
-          </div>
-          <img src="./images/girl-cream.png" alt="Moisturizer product" class="promo-img">
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="./images/logo.png" alt="Logo">
-          <div class="logo-text">
-            <strong>The Day Beauty</strong>
-            <span>Beauty & treatment store</span>
+          <div class="list-wrapper">
+            <div class="list-item">
+              <div class="item-info">
+                <img src="./images/Gerald Argungu.png" alt="User" class="item-avatar">
+                <div class="item-text"><h4>Gerald Argungu</h4><p>21/12/21</p></div>
+              </div>
+              <span class="amount text-red">₦ 22,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <img src="./images/Tahav Vihikwagh.png" alt="User" class="item-avatar">
+                <div class="item-text"><h4>Tahav Vihikwagh</h4><p>21/12/21</p></div>
+              </div>
+              <span class="amount text-red">₦ 34,000</span>
+            </div>
+            <div class="list-item active-item">
+              <div class="item-info">
+                <img src="./images/Frank Jones.png" alt="User" class="item-avatar">
+                <div class="item-text"><h4>Frank Jones</h4><p>21/12/21</p></div>
+              </div>
+              <span class="amount text-green">₦ 52,000</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="footer-nav">
-        <h4>About</h4>
-        <ul>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Pricing</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-nav">
-        <h4>Articles</h4>
-        <ul>
-          <li><a href="#">Healthline</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Promos</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <div class="contact-item">
-          <img src="./images/phone.png" alt="Phone">
-          <span>(0351) 2788 2331</span>
+        <div class="card item-report">
+          <div class="card-header">
+            <h3>Report</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="chart-container">
+            <img src="./images/Grafik-Report.svg" alt="Report Chart" class="chart-img">
+          </div>
         </div>
-        <div class="contact-item">
-          <img src="./images/whatsapp.png" alt="WhatsApp">
-          <span>0812 2000 9009</span>
+
+        <div class="card item-budget">
+          <div class="card-header">
+            <h3>Budget</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="budget-top">
+            <h2>Cash</h2>
+            <h2 class="budget-total">₦ 100,000</h2>
+          </div>
+          <div class="list-wrapper budget-list">
+            <div class="list-item">
+              <div class="item-info">
+                <div class="checkbox checked"></div>
+                <div class="item-text"><h4>Subscriptions</h4><p>Automated</p></div>
+              </div>
+              <span class="amount">₦ 22,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <div class="checkbox checked"></div>
+                <div class="item-text"><h4>Loan Payment</h4><p>Automated</p></div>
+              </div>
+              <span class="amount">₦ 20,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <div class="checkbox checked"></div>
+                <div class="item-text"><h4>Foodstuff</h4><p>Automated</p></div>
+              </div>
+              <span class="amount">₦ 10,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <div class="checkbox"></div>
+                <div class="item-text"><h4>Savings</h4></div>
+              </div>
+              <span class="amount">₦ 2,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <div class="checkbox"></div>
+                <div class="item-text"><h4>Fuel</h4></div>
+              </div>
+              <span class="amount">₦ 12,000</span>
+            </div>
+          </div>
         </div>
+
+        <div class="card item-subscriptions">
+          <div class="card-header">
+            <h3>Subscriptions</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="list-wrapper">
+            <div class="list-item">
+              <div class="item-info">
+                <img src="./images/icon-Subscriptions.svg" alt="Sub" class="sub-icon">
+                <div class="item-text"><h4>LinkedIn <span class="due">due 21/12/21</span></h4></div>
+              </div>
+              <span class="amount">₦ 20,000</span>
+            </div>
+            <div class="list-item active-sub">
+              <div class="item-info">
+                <img src="./images/icon-Subscriptions.svg" alt="Sub" class="sub-icon">
+                <div class="item-text"><h4>Netflix <span class="due">due 21/12/21</span></h4></div>
+              </div>
+              <span class="amount">₦ 5,000</span>
+            </div>
+            <div class="list-item">
+              <div class="item-info">
+                <img src="./images/icon-Subscriptions.svg" alt="Sub" class="sub-icon">
+                <div class="item-text"><h4>DSTV <span class="due">due 21/12/21</span></h4></div>
+              </div>
+              <span class="amount">₦ 2,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item-savings">
+          <div class="card-header">
+            <h3>Savings</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="savings-content">
+            <img src="./images/Grafik-Savings.svg" alt="Savings Chart" class="donut-chart">
+            <div class="savings-info">
+              <p>Savings Target</p>
+              <h4>₦ 500,000</h4>
+              <p class="mt-10">Target Reached</p>
+              <h4>₦ 250,000</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item-loans">
+          <div class="card-header">
+            <h3>Loans</h3>
+            <img src="./images/plus.svg" alt="Add" class="add-icon">
+          </div>
+          <div class="list-item mb-10">
+            <div class="item-info">
+              <img src="./images/Pay kid bro's fees.png" alt="Loan" class="item-avatar">
+              <div class="item-text"><h4>Pay kid bro's fees</h4></div>
+            </div>
+            <span class="amount">₦ 250,000</span>
+          </div>
+          <div class="loan-progress-labels">
+            <span>Date taken 21/12/21</span>
+            <span>Amount left ₦40,000</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="card item-advice">
+          <div class="card-header">
+            <h3>Financial Advice</h3>
+          </div>
+          <p class="advice-text">Try dey enjoy life. Problem no dey finish. For this life lol....</p>
+        </div>
+
       </div>
 
-      <div class="footer-subscribe">
-        <h4>Get early promos</h4>
-        <form class="subscribe-form">
-          <input type="email" placeholder="YOUR EMAIL">
-          <button type="submit">&rarr;</button>
-        </form>
-      </div>
-    </div>
-  </footer>
+    </main>
+
+  </div>
 
 </body>
 </html>
