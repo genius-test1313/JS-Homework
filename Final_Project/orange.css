@@ -1,4 +1,4 @@
-/* --- ЗМІННІ (Із твоїх скріншотів) --- */
+/* --- ЗМІННІ --- */
 :root {
   --bg-page: #121212;      
   --bg-dashboard: #1E1A17; 
@@ -76,13 +76,7 @@ body {
 .cards-grid::-webkit-scrollbar { width: 6px; }
 .cards-grid::-webkit-scrollbar-thumb { background-color: #3a3633; border-radius: 10px; }
 
-.card { 
-  background-color: var(--bg-card); 
-  border-radius: 9.48px; /* Точний радіус з макета! */
-  padding: 24px; 
-  display: flex; 
-  flex-direction: column; 
-}
+.card { background-color: var(--bg-card); border-radius: 9.48px; padding: 24px; display: flex; flex-direction: column; }
 .item-budget { grid-row: span 2; }
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .card-header h3 { font-size: 14px; font-weight: 500; color: var(--text-muted); }
@@ -91,7 +85,7 @@ body {
 
 /* --- ВНУТРІШНІЙ КОНТЕНТ КАРТОК --- */
 
-/* 1. Bank Card (Точне компонування + Градієнт) */
+/* 1. Bank Card */
 .bank-card { 
   background: radial-gradient(circle at 100% 100%, rgba(255, 107, 0, 0.3) 0%, transparent 60%), linear-gradient(135deg, #3a2e25 0%, #1a1613 100%);
   border-radius: 9.48px; 
@@ -102,7 +96,7 @@ body {
   justify-content: space-between; 
 }
 .bc-label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
-.bc-balance { font-size: 20px; font-weight: 600; }
+.bc-balance { font-size: 20px; font-weight: 600; color: var(--text-white); }
 .bc-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
 .bc-number { font-size: 11px; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 2px; }
 .bc-expiry { font-size: 9px; color: var(--text-muted); }
@@ -118,16 +112,18 @@ body {
 .item-text h4 { font-size: 13px; font-weight: 500; color: var(--text-muted); }
 .item-text p { font-size: 11px; color: var(--text-dark-gray); margin-top: 3px; }
 .due { color: var(--text-dark-gray); font-size: 10px; font-weight: 400; margin-left: 5px; }
-.amount { font-size: 13px; font-weight: 600; }
+
+/* ТЕПЕР ЦИФРИ СІРІ ЗА ЗМОВЧУВАННЯМ */
+.amount { font-size: 13px; font-weight: 600; color: var(--text-muted); }
 .text-red { color: var(--text-red); }
 .text-green { color: var(--text-green); }
+.text-white { color: var(--text-white); } /* Спеціальний клас для білих сум (наприклад, у Loans) */
 
-/* 3. Report Chart (Осі та графік) */
-.report-container { display: flex; gap: 15px; flex: 1; }
-.y-axis { display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 20px; font-size: 9px; color: var(--text-dark-gray); }
+/* 3. Report Chart (Без зайвих місяців знизу) */
+.report-container { display: flex; gap: 10px; flex: 1; align-items: stretch; }
+.y-axis { display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 25px; font-size: 9px; color: var(--text-dark-gray); }
 .chart-content { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
-.chart-img { width: 100%; object-fit: contain; margin-bottom: 10px; }
-.x-axis { display: flex; justify-content: space-between; font-size: 9px; color: var(--text-dark-gray); padding: 0 5px; }
+.chart-img { width: 100%; object-fit: contain; }
 
 /* 4. Budget */
 .budget-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -135,23 +131,8 @@ body {
 .budget-total { font-size: 18px; font-weight: 600; color: var(--text-white); }
 .budget-list { gap: 18px; }
 
-/* Прозорі чекбокси */
-.checkbox { 
-  width: 16px; 
-  height: 16px; 
-  border: 1.5px solid var(--text-dark-gray); 
-  border-radius: 4px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  background-color: transparent; 
-}
-.checkbox.checked::after { 
-  content: '✓'; 
-  color: var(--text-muted); 
-  font-size: 12px; 
-  font-weight: bold; 
-}
+.checkbox { width: 16px; height: 16px; border: 1.5px solid var(--text-dark-gray); border-radius: 4px; display: flex; align-items: center; justify-content: center; background-color: transparent; }
+.checkbox.checked::after { content: '✓'; color: var(--text-muted); font-size: 12px; font-weight: bold; }
 
 /* 6. Savings */
 .savings-content { display: flex; align-items: center; gap: 20px; }
