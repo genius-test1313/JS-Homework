@@ -8,7 +8,6 @@
   --text-muted: #8A8587;   
   --text-green: #00FF66;
   --text-red: #FF3B30;
-  --card-gradient: linear-gradient(135deg, #3a2e25 0%, #1a1613 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,8 +82,16 @@ body {
 
 /* --- ВНУТРІШНІЙ КОНТЕНТ КАРТОК --- */
 
-/* 1. Bank Card */
-.bank-card { background: var(--card-gradient); border-radius: 12px; padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+/* 1. Bank Card (Оновлений градієнт з помаранчевим світінням) */
+.bank-card { 
+  background: radial-gradient(circle at 100% 100%, rgba(255, 107, 0, 0.3) 0%, transparent 60%), linear-gradient(135deg, #3a2e25 0%, #1a1613 100%);
+  border-radius: 12px; 
+  padding: 20px; 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+}
 .bc-label { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
 .bc-balance { font-size: 22px; font-weight: 600; margin-bottom: 20px; }
 .bc-footer { display: flex; justify-content: space-between; align-items: flex-end; }
@@ -93,7 +100,7 @@ body {
 .bc-expiry span { color: var(--text-main); font-weight: 600; margin-left: 5px; }
 .bc-logo { width: 35px; }
 
-/* 2. Lists (Transactions, Subscriptions) */
+/* 2. Lists (Transactions, Subscriptions, Budget) */
 .list-wrapper { display: flex; flex-direction: column; gap: 15px; }
 .list-item { display: flex; justify-content: space-between; align-items: center; }
 .item-info { display: flex; align-items: center; gap: 12px; }
@@ -105,17 +112,30 @@ body {
 .amount { font-size: 13px; font-weight: 600; }
 .text-red { color: var(--text-red); }
 .text-green { color: var(--text-green); }
-.active-item { border: 1px solid rgba(0, 163, 255, 0.5); padding: 8px; border-radius: 8px; margin: -8px; background: rgba(0, 163, 255, 0.05); }
-.active-sub h4 { color: #00A3FF; } /* Блакитний текст для активного Netflix */
 
 /* 3. Budget */
 .budget-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .budget-top h2 { font-size: 16px; font-weight: 500; }
 .budget-total { font-size: 18px; font-weight: 600; }
 .budget-list { gap: 18px; }
-.checkbox { width: 16px; height: 16px; border: 1.5px solid var(--text-muted); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-.checkbox.checked { background-color: var(--text-main); border-color: var(--text-main); position: relative; }
-.checkbox.checked::after { content: '✓'; color: var(--bg-dashboard); font-size: 12px; font-weight: bold; position: absolute; }
+
+/* Оновлені прозорі чекбокси з білою галочкою */
+.checkbox { 
+  width: 16px; 
+  height: 16px; 
+  border: 1.5px solid var(--text-muted); 
+  border-radius: 4px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: transparent; /* Жодного білого фону! */
+}
+.checkbox.checked::after { 
+  content: '✓'; 
+  color: var(--text-main); 
+  font-size: 12px; 
+  font-weight: bold; 
+}
 
 /* 4. Charts (Report, Savings) */
 .chart-container { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
