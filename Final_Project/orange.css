@@ -5,7 +5,8 @@
   --bg-card: #29221D;      
   --accent-orange: #FF6B00;
   
-  --text-white: #FFFFFF;   
+  /* М'який кремово-білий замість сліпучого чисто-білого */
+  --text-white: #EAE6E3;   
   --text-muted: #BDBABB;   
   --text-dark-gray: #7A7571; 
   
@@ -16,7 +17,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Bai Jamjuree', sans-serif;
+  /* Страховка для символу Найри (sans-serif в кінці) */
+  font-family: 'Bai Jamjuree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--bg-page);
   color: var(--text-white);
   height: 100vh; 
@@ -113,13 +115,13 @@ body {
 .item-text p { font-size: 11px; color: var(--text-dark-gray); margin-top: 3px; }
 .due { color: var(--text-dark-gray); font-size: 10px; font-weight: 400; margin-left: 5px; }
 
-/* ТЕПЕР ЦИФРИ СІРІ ЗА ЗМОВЧУВАННЯМ */
+/* Цифри тепер спокійного сірого кольору (як на макеті) */
 .amount { font-size: 13px; font-weight: 600; color: var(--text-muted); }
 .text-red { color: var(--text-red); }
 .text-green { color: var(--text-green); }
-.text-white { color: var(--text-white); } /* Спеціальний клас для білих сум (наприклад, у Loans) */
+.text-white { color: var(--text-white); } /* Для великих сум */
 
-/* 3. Report Chart (Без зайвих місяців знизу) */
+/* 3. Report Chart (Осі та графік без дублів) */
 .report-container { display: flex; gap: 10px; flex: 1; align-items: stretch; }
 .y-axis { display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 25px; font-size: 9px; color: var(--text-dark-gray); }
 .chart-content { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
