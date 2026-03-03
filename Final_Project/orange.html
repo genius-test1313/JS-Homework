@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -58,10 +58,12 @@
             <img src="./images/plus.svg" alt="Add" class="add-icon">
           </div>
           <div class="bank-card">
-            <p class="bc-label">Balance</p>
-            <h2 class="bc-balance">₦ 22,000</h2>
-            <div class="bc-footer">
-              <div class="bc-details">
+            <div class="bc-top">
+              <p class="bc-label">Balance</p>
+              <h2 class="bc-balance">₦ 22,000</h2>
+            </div>
+            <div class="bc-bottom">
+              <div class="bc-info">
                 <p class="bc-number">**** **** **** 1234</p>
                 <p class="bc-expiry">Expires <span>12/22</span></p>
               </div>
@@ -105,8 +107,16 @@
             <h3>Report</h3>
             <img src="./images/plus.svg" alt="Add" class="add-icon">
           </div>
-          <div class="chart-container">
-            <img src="./images/Grafik-Report.svg" alt="Report Chart" class="chart-img">
+          <div class="report-container">
+            <div class="y-axis">
+              <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
+            </div>
+            <div class="chart-content">
+              <img src="./images/Grafik-Report.svg" alt="Report Chart" class="chart-img">
+              <div class="x-axis">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+              </div>
+            </div>
           </div>
         </div>
 
