@@ -1,3 +1,4 @@
+/* --- ЗМІННІ --- */
 :root {
   --bg-page: #121212;      
   --bg-dashboard: #1E1C1A; 
@@ -23,6 +24,7 @@ body {
   align-items: center;     
 }
 
+/* --- ГОЛОВНИЙ КОНТЕЙНЕР --- */
 .dashboard-container {
   background-color: var(--bg-dashboard);
   width: 100%;
@@ -35,6 +37,7 @@ body {
   box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
 }
 
+/* --- САЙДБАР --- */
 .sidebar {
   background-color: var(--bg-sidebar);
   padding: 30px;
@@ -108,12 +111,69 @@ body {
   filter: brightness(0) invert(1); 
 }
 
+/* --- ГОЛОВНА ЧАСТИНА --- */
 .main-content {
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
 }
 
+/* --- ШАПКА (HEADER) --- */
 .header {
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative; /* Необхідно для позиціонування крапки */
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon-btn:hover img {
+  opacity: 1;
+}
+
+/* Помаранчева крапка на дзвіночку */
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-orange);
+  border-radius: 50%;
+  border: 2px solid var(--bg-dashboard); /* Обведення під колір фону */
 }
