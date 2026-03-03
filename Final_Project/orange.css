@@ -1,0 +1,58 @@
+/* --- ЗМІННІ (Кольори нашого макета) --- */
+:root {
+  --bg-page: #121212;      /* Наружный фон страницы (почти черный) */
+  --bg-dashboard: #1E1C1A; /* Фон самого дашборда (темно-коричневатый) */
+  --bg-sidebar: #262321;   /* Фон бокового меню (чуть светлее) */
+  --accent-orange: #FF6B00;/* Наш фирменный неоново-оранжевый */
+  --text-main: #FFFFFF;    /* Белый текст */
+  --text-muted: #8A8587;   /* Серый текст для подписей */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  height: 100vh; /* Высота экрана = 100% */
+  display: flex;
+  justify-content: center; /* Центрируем дашборд по горизонтали */
+  align-items: center;     /* Центрируем дашборд по вертикали */
+}
+
+/* --- ГОЛОВНИЙ КОНТЕЙНЕР (Сам Дашборд) --- */
+.dashboard-container {
+  background-color: var(--bg-dashboard);
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh; /* Занимает 90% высоты экрана */
+  border-radius: 20px;
+  overflow: hidden; /* Обрезаем всё, что вылазит за скругленные углы */
+  
+  /* Включаем магию GRID! Делим дашборд на 2 колонки */
+  display: grid;
+  grid-template-columns: 240px 1fr; /* Левая колонка строго 240px, правая занимает ВСЁ оставшееся место (1fr) */
+  
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Добавляем красивую тень */
+}
+
+/* --- САЙДБАР --- */
+.sidebar {
+  background-color: var(--bg-sidebar);
+  padding: 30px;
+}
+
+/* --- ГОЛОВНА ЧАСТИНА --- */
+.main-content {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 30px;
+}
