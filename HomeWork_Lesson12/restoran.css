@@ -166,7 +166,7 @@ img {
    3. ГЛАВНЫЙ ЭКРАН (HERO)
    ========================================= */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/pizza-pepperoni.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/pizza-pepperoni.jpg') center/cover no-repeat;
     padding: 120px 0;
     text-align: center;
     color: var(--white);
