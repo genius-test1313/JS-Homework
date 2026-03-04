@@ -1,39 +1,34 @@
-/* =========================================
-   Секція About Us (Why Yoga Helps You)
-   Базові стилі (Mobile First: 320px - 767px)
-   ========================================= */
-
 .about-us {
     background-color: #F2FAFA;
-    padding: 60px 0;
+    padding: 64px 0; 
     text-align: center;
 }
 
 .about-title {
     font-family: 'Cabin', sans-serif;
-    font-size: 28px;
+    font-size: 40px; 
     font-weight: 600;
     color: #0D0B0A;
-    margin-bottom: 12px;
+    margin-bottom: 20px; 
 }
 
 .about-subtitle {
     font-family: 'Sarabun', sans-serif;
-    font-size: 18px;
+    font-size: 16px; 
     font-weight: 400;
     line-height: 1.6;
     color: #0D0B0A;
-    margin-bottom: 24px;
+    margin-bottom: 24px; 
 }
 
 .about-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 48px; 
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 48px; 
 }
 
 .about-card-title {
@@ -43,7 +38,7 @@
     line-height: 1.4;
     letter-spacing: 0.01em;
     color: #0D0B0A;
-    margin-bottom: 12px;
+    margin-bottom: 20px; 
 }
 
 .about-card-text {
@@ -54,7 +49,6 @@
     color: #0D0B0A;
 }
 
-/* Стилі кнопки */
 .about-btn {
     display: inline-block;
     font-family: 'Sarabun', sans-serif;
@@ -75,48 +69,62 @@
     background-color: #A3C0FC;
 }
 
-/* =========================================
-   Tablet: від 768px до 1335px
-   ========================================= */
+
 @media screen and (min-width: 768px) {
     .about-us {
-        padding: 80px 0;
+        padding: 80px 0 40px 0; 
     }
 
     .about-title {
-        font-size: 36px;
+        margin-bottom: 24px; 
+    }
+
+    .about-subtitle {
+        margin-bottom: 40px; 
     }
 
     .about-list {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 32px;
+        margin-bottom: 40px; 
     }
 
     .about-item {
         width: calc((100% - 32px) / 2);
     }
+
+    .about-card-title {
+        font-size: 24px; 
+        margin-bottom: 12px; 
+    }
 }
 
-/* =========================================
-   Desktop: від 1336px
-   ========================================= */
 @media screen and (min-width: 1336px) {
     .about-us {
         padding: 112px 0;
     }
 
     .about-title {
-        font-size: 40px;
+        font-size: 52px; 
+        margin-bottom: 24px; 
+    }
+
+    .about-subtitle {
+        margin-bottom: 40px; 
     }
 
     .about-list {
         flex-wrap: nowrap;
-        gap: 64px;
-        margin-bottom: 40px;
+        gap: 24px; 
+        margin-bottom: 40px; 
     }
 
     .about-item {
-        width: calc((100% - (64px * 3)) / 4);
+        width: calc((100% - (24px * 3)) / 4); 
+    }
+
+    .about-card-title {
+        margin-bottom: 24px; 
     }
 }
