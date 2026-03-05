@@ -18,6 +18,8 @@ about-cart-title нижній відступ 12рх, потрібно 24рх
 
 testimonials-title розмір тексту 40рх, потрібно 52рх
 
+https://innanaka.github.io/code-the-future/
+
 
 
 tablet version:
