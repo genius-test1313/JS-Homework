@@ -4,7 +4,6 @@
     --blue: #0B50C3;   
     --dark: #0B2250;   
     --text-gray: #4B5563; 
-    --light-gray: #F3F4F6;
     --font-main: 'Outfit', sans-serif; 
 }
 
@@ -93,7 +92,6 @@ a {
     box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
 }
 
-/* Белая кнопка с синей обводкой */
 .btn-outline {
     padding: 12px 24px;
     border-radius: 100px;
@@ -333,13 +331,12 @@ a {
 }
 
 /* =========================================
-   8. СЕКЦИЯ КАРТОЧЕК НЕДВИЖИМОСТИ (НОВОЕ!)
+   8. СЕКЦИЯ КАРТОЧЕК НЕДВИЖИМОСТИ
 ========================================= */
 .properties {
-    padding: 80px 20px; /* Отступ от картинки города */
+    padding: 100px 20px; 
 }
 
-/* Шапка секции (Заголовок слева, кнопка справа) */
 .properties__header {
     display: flex;
     justify-content: space-between;
@@ -362,30 +359,26 @@ a {
     color: var(--dark);
 }
 
-/* CSS GRID для выстраивания карточек в ряд */
 .properties__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки одинаковой ширины */
-    gap: 24px; /* Расстояние между карточками */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px; /* УВЕЛИЧИЛИ РАССТОЯНИЕ КАК В FIGMA! */
 }
 
-/* Сама карточка */
 .property-card {
     background: #FFFFFF;
     border-radius: 16px;
     border: 1px solid #E5E7EB;
-    overflow: hidden; /* Чтобы картинка не вылезала за закругленные углы */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-/* МАГИЯ: Карточка приподнимается при наведении */
 .property-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(11, 34, 80, 0.08);
 }
 
-/* Обертка для картинки */
 .property-card__img-wrapper {
     position: relative;
     width: 100%;
@@ -393,7 +386,6 @@ a {
     overflow: hidden;
 }
 
-/* МАГИЯ: Картинка внутри плавно увеличивается при наведении на карточку */
 .property-card__img-wrapper img {
     width: 100%;
     height: 100%;
@@ -402,10 +394,9 @@ a {
 }
 
 .property-card:hover .property-card__img-wrapper img {
-    transform: scale(1.08); /* Увеличиваем на 8% */
+    transform: scale(1.08); 
 }
 
-/* Плашки поверх фото (Featured, Verified) */
 .card-badges {
     position: absolute;
     top: 16px;
@@ -426,7 +417,6 @@ a {
 .badge--green { color: #00C853; }
 .badge--blue { color: #00BCD4; }
 
-/* Кнопка-сердечко поверх фото */
 .heart-btn {
     position: absolute;
     top: 16px;
@@ -444,11 +434,10 @@ a {
 }
 
 .heart-btn:hover {
-    color: #FF3B30; /* Становится красной при наведении */
+    color: #FF3B30; 
     transform: scale(1.1);
 }
 
-/* Текстовая часть карточки */
 .property-card__content {
     padding: 20px;
 }
@@ -495,4 +484,106 @@ a {
     font-size: 13px;
     color: var(--text-gray);
     font-weight: 500;
+}
+
+/* =========================================
+   9. НОВАЯ СЕКЦИЯ: HOW HOMECONNECT WORKS
+========================================= */
+.process {
+    padding: 80px 20px;
+}
+
+.process__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.process__header h2 {
+    font-size: 36px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.process__header p {
+    color: var(--text-gray);
+    font-size: 18px;
+}
+
+.process__steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Разноцветная линия позади кружков */
+.process__line {
+    position: absolute;
+    top: 48px; /* Ровно по центру иконок */
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(to right, #0B50C3 0%, #00C853 33%, #FF6600 66%, #0B50C3 100%);
+    z-index: 1;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Выводим поверх линии */
+    padding: 0 16px;
+}
+
+/* Квадраты с иконками */
+.step__icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 24px auto;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Нежные цвета подложек */
+.step__icon--blue { background-color: #EBF2FF; }
+.step__icon--green { background-color: #E8F7ED; }
+.step__icon--orange { background-color: #FFF0E5; }
+
+.step__icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Синие кружочки с цифрами поверх контейнера с иконкой */
+.step__number {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--blue);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    border: 4px solid #FFFFFF; /* Белая окантовка дает эффект "прорези" */
+}
+
+.step h3 {
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.step p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.6;
 }
