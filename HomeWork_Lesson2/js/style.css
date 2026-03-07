@@ -114,237 +114,8 @@ a { text-decoration: none; color: inherit; }
 .step p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
 
 /* =========================================
-   8. НОВОЕ: СИНЯЯ ПАНЕЛЬ СТАТИСТИКИ
+   8. СКАЧАТЬ ПРИЛОЖЕНИЕ (ТЕЛЕФОН)
 ========================================= */
-.blue-stats {
-    background-color: var(--blue);
-    padding: 60px 0;
-    margin-top: 40px;
-}
-
-.blue-stats__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.stat-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #FFFFFF;
-    text-align: center;
-    flex: 1;
-    position: relative;
-}
-
-/* Разделительные тонкие линии между статистикой */
-.stat-box:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0; top: 20%;
-    height: 60%; width: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.stat-box__icon {
-    width: 64px; height: 64px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.stat-box__num {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1;
-}
-
-.stat-box__title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.stat-box__desc {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* =========================================
-   9. НОВОЕ: КАТАЛОГ (САЙДБАР + СЕТКА)
-========================================= */
-.catalog {
-    padding: 100px 20px;
-}
-
-.catalog__header {
-    margin-bottom: 40px;
-}
-
-.catalog__title {
-    font-size: 32px;
-    color: var(--dark);
-    margin-bottom: 8px;
-}
-
-.catalog__subtitle {
-    font-size: 16px;
-    color: var(--text-gray);
-}
-
-.catalog__layout {
-    display: grid;
-    grid-template-columns: 280px 1fr; /* Левая колонка 280px, правая занимает всё остальное */
-    gap: 40px;
-}
-
-/* САЙДБАР С ФИЛЬТРАМИ */
-.sidebar {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 16px;
-    padding: 24px;
-    height: fit-content;
-    /* МАГИЯ ЛИПУЧКИ: Сайдбар всегда на экране при скролле вниз */
-    position: sticky;
-    top: 24px;
-}
-
-.sidebar__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.sidebar__title {
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.sidebar__clear {
-    font-size: 14px;
-    color: var(--blue);
-    font-weight: 600;
-}
-
-.filter-group {
-    margin-bottom: 24px;
-}
-
-.filter-group h4 {
-    font-size: 16px;
-    color: var(--dark);
-    margin-bottom: 16px;
-}
-
-/* Кастомные Радио-кнопки (Кружочки) */
-.custom-radio {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    color: var(--text-gray);
-    margin-bottom: 12px;
-    cursor: pointer;
-}
-
-.custom-radio input {
-    display: none; /* Прячем страшный стандартный кружок браузера */
-}
-
-/* Рисуем свой красивый кружок */
-.radio-mark {
-    width: 18px; height: 18px;
-    border: 2px solid #D1D5DB;
-    border-radius: 50%;
-    position: relative;
-    transition: all 0.2s;
-}
-
-/* Что происходит, когда мы кликаем (checked) */
-.custom-radio input:checked + .radio-mark {
-    border-color: var(--blue);
-}
-
-.custom-radio input:checked + .radio-mark::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px; height: 10px;
-    background: var(--blue);
-    border-radius: 50%;
-}
-
-/* Имитация красивого ползунка (слайдера) */
-.slider-mock { padding: 10px 0; }
-.slider-track { height: 4px; background: #E5E7EB; border-radius: 2px; position: relative; margin-bottom: 16px; }
-.slider-fill { position: absolute; left: 10%; right: 40%; height: 100%; background: var(--blue); border-radius: 2px; }
-.slider-thumb { width: 16px; height: 16px; background: #FFFFFF; border: 2px solid var(--blue); border-radius: 50%; position: absolute; top: 50%; transform: translateY(-50%); box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; }
-.slider-thumb.left { left: 10%; }
-.slider-thumb.right { right: 40%; }
-.slider-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-gray); font-weight: 500;}
-
-
-/* ПРАВАЯ ЧАСТЬ (Каталог и Сортировка) */
-.catalog__topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 12px;
-    padding: 16px 24px;
-    margin-bottom: 32px;
-}
-
-.showing { font-size: 14px; color: var(--text-gray); }
-.showing strong { color: var(--dark); font-weight: 700; }
-
-.sort-box { display: flex; align-items: center; gap: 24px; }
-.sort-label { font-size: 14px; color: var(--text-gray); }
-.sort-label strong { color: var(--dark); font-weight: 600; cursor: pointer; }
-
-.view-toggles { display: flex; gap: 8px; }
-.view-btn { width: 32px; height: 32px; border: none; background: #F3F4F6; border-radius: 8px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
-.view-btn.active { background: var(--blue); color: #FFFFFF; }
-
-/* Сетка каталога (Переопределяем на 3 колонки вместо 4) */
-.catalog__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 40px;
-}
-
-/* Блок заглушка Карты */
-.map-placeholder {
-    background: #F4F7F9;
-    border-radius: 16px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    color: var(--text-gray);
-}
-.map-icon { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--dark); }
-.map-text { font-size: 14px; }
-
-/* ===== 10. СЕКЦИЯ: СКАЧАТЬ ПРИЛОЖЕНИЕ ===== */
 .download-app { background-color: #F4F7F9; padding: 80px 0; overflow: hidden; }
 .download-app__inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .download-app__content { flex: 1; max-width: 550px; }
@@ -368,3 +139,82 @@ a { text-decoration: none; color: inherit; }
 .download-app__image { flex: 1; display: flex; justify-content: center; position: relative; }
 .download-app__image img { max-width: 100%; mix-blend-mode: darken; animation: floatPhone 4s ease-in-out infinite; }
 @keyframes floatPhone { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+
+/* =========================================
+   9. СИНЯЯ ПАНЕЛЬ СТАТИСТИКИ
+========================================= */
+.blue-stats { background-color: var(--blue); padding: 60px 0; margin-top: 0; }
+.blue-stats__inner { display: flex; justify-content: space-between; align-items: center; }
+.stat-box { display: flex; flex-direction: column; align-items: center; color: #FFFFFF; text-align: center; flex: 1; position: relative; }
+.stat-box:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background-color: rgba(255, 255, 255, 0.2); }
+.stat-box__icon { width: 64px; height: 64px; background-color: rgba(255, 255, 255, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.stat-box__num { font-size: 40px; font-weight: 700; margin-bottom: 8px; line-height: 1; }
+.stat-box__title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.stat-box__desc { font-size: 14px; opacity: 0.8; }
+
+/* =========================================
+   10. КАТАЛОГ (САЙДБАР + СЕТКА)
+========================================= */
+.catalog { padding: 100px 20px; }
+.catalog__header { margin-bottom: 40px; }
+.catalog__title { font-size: 32px; color: var(--dark); margin-bottom: 8px; }
+.catalog__subtitle { font-size: 16px; color: var(--text-gray); }
+.catalog__layout { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+
+/* САЙДБАР */
+.sidebar { 
+    background: #FFFFFF; 
+    border: 1px solid #E5E7EB; 
+    border-radius: 16px; 
+    padding: 24px; 
+    height: fit-content; 
+    
+    /* ТА САМАЯ МАГИЯ "ЛИПКОВО МЕНЮ". 
+       Если тебе прям не нравится этот эффект, просто удали две нижние строчки! */
+    position: sticky; 
+    top: 24px; 
+}
+.sidebar__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #E5E7EB; }
+.sidebar__title { font-weight: 600; font-size: 18px; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+.sidebar__clear { font-size: 14px; color: var(--blue); font-weight: 600; }
+.filter-group { margin-bottom: 24px; }
+.filter-group h4 { font-size: 16px; color: var(--dark); margin-bottom: 16px; }
+.custom-radio { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-gray); margin-bottom: 12px; cursor: pointer; }
+.custom-radio input { display: none; }
+.radio-mark { width: 18px; height: 18px; border: 2px solid #D1D5DB; border-radius: 50%; position: relative; transition: all 0.2s; }
+.custom-radio input:checked + .radio-mark { border-color: var(--blue); }
+.custom-radio input:checked + .radio-mark::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background: var(--blue); border-radius: 50%; }
+
+/* === ИСПРАВЛЕННЫЙ ТРЕХЦВЕТНЫЙ ПОЛЗУНОК === */
+.slider-mock { padding: 10px 0; }
+.slider-track { height: 4px; background: #E5E7EB; border-radius: 2px; position: relative; margin-bottom: 16px; }
+
+/* Синяя часть линии (от начала до левого ползунка) */
+.slider-fill-blue { position: absolute; left: 0; width: 20%; height: 100%; background: var(--blue); border-radius: 2px 0 0 2px; }
+
+/* Зеленая часть линии (между ползунками) */
+.slider-fill-green { position: absolute; left: 20%; width: 50%; height: 100%; background: #00C853; }
+
+/* Сами кружочки */
+.slider-thumb { width: 16px; height: 16px; background: #FFFFFF; border-radius: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; }
+.slider-thumb.left { left: 20%; border: 2px solid var(--blue); }
+.slider-thumb.right { left: 70%; border: 2px solid #00C853; }
+
+.slider-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-gray); font-weight: 500;}
+
+/* ПРАВАЯ ЧАСТЬ */
+.catalog__topbar { display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 16px 24px; margin-bottom: 32px; }
+.showing { font-size: 14px; color: var(--text-gray); }
+.showing strong { color: var(--dark); font-weight: 700; }
+.sort-box { display: flex; align-items: center; gap: 24px; }
+.sort-label { font-size: 14px; color: var(--text-gray); }
+.sort-label strong { color: var(--dark); font-weight: 600; cursor: pointer; }
+.view-toggles { display: flex; gap: 8px; }
+.view-btn { width: 32px; height: 32px; border: none; background: #F3F4F6; border-radius: 8px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+.view-btn.active { background: var(--blue); color: #FFFFFF; }
+
+.catalog__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+
+.map-placeholder { background: #F4F7F9; border-radius: 16px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--text-gray); }
+.map-icon { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--dark); }
+.map-text { font-size: 14px; }
