@@ -8,30 +8,12 @@
 }
 
 /* ===== 2. БАЗОВЫЙ СБРОС ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-main); color: var(--dark); background-color: #FFFFFF; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
-body {
-    font-family: var(--font-main);
-    color: var(--dark);
-    background-color: #FFFFFF;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ===== 3. ШАПКА (Header) ===== */
+/* ===== 3. ШАПКА ===== */
 .header { padding: 20px 0; background: #FFFFFF; }
 .header__inner { display: flex; justify-content: space-between; align-items: center; }
 .nav { display: flex; gap: 40px; }
@@ -42,6 +24,7 @@ a {
 .btn { padding: 14px 28px; border-radius: 12px; font-weight: 600; font-family: var(--font-main); cursor: pointer; border: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .btn--orange { background: var(--orange); color: #FFFFFF; }
 .btn--orange:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2); }
+.btn--full { width: 100%; margin-top: 10px; }
 .btn-outline { padding: 12px 24px; border-radius: 100px; border: 1.5px solid var(--blue); color: var(--blue); font-weight: 600; transition: all 0.3s ease; }
 .btn-outline:hover { background: var(--blue); color: #FFFFFF; }
 .text-blue { color: var(--blue); }
@@ -53,8 +36,6 @@ a {
 .hero__overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(15, 12, 10, 0.9) 0%, rgba(15, 12, 10, 0.1) 100%); }
 .hero__content { position: relative; z-index: 2; width: 100%; }
 @keyframes bgZoomOut { from { transform: scale(1.3); } to { transform: scale(1); } }
-
-/* ===== 5. ТЕКСТ ГЛАВНОГО ЭКРАНА ===== */
 .hero__info { max-width: 800px; color: #FFFFFF; }
 .text-orange { color: var(--orange); }
 .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px 16px; border-radius: 100px; font-size: 14px; backdrop-filter: blur(10px); margin-bottom: 24px; }
@@ -62,7 +43,7 @@ a {
 .hero__title { font-size: 56px; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
 .hero__subtitle { font-size: 18px; color: rgba(255, 255, 255, 0.8); margin-bottom: 40px; line-height: 1.5; }
 
-/* ===== 6. БЛОК ПОИСКА ===== */
+/* ===== 5. БЛОК ПОИСКА И ПЛАШКИ ===== */
 .search-box { background: #FFFFFF; border-radius: 16px; padding: 24px; margin-bottom: 40px; max-width: 800px; color: var(--dark); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
 .search-box__tabs { display: flex; background-color: #F4F6F8; padding: 6px; border-radius: 100px; margin-bottom: 20px; }
 .tab { flex: 1; padding: 12px; border: none; background: transparent; font-family: var(--font-main); font-size: 16px; font-weight: 600; color: var(--text-gray); border-radius: 100px; cursor: pointer; transition: all 0.3s ease; }
@@ -74,8 +55,6 @@ a {
 .input-group span { font-size: 16px; font-weight: 500; color: var(--text-gray); cursor: pointer; display: flex; align-items: center; gap: 5px; }
 .divider { width: 1px; height: 32px; background-color: #E5E7EB; }
 .search-btn { display: flex; align-items: center; gap: 8px; padding: 14px 32px; }
-
-/* ===== 7. ТРИ ИНФО-ПЛАШКИ ===== */
 .hero__features { display: flex; gap: 20px; }
 .feature-card { display: flex; align-items: center; gap: 12px; background: #FFFFFF; padding: 16px 20px; border-radius: 12px; color: var(--dark); }
 .feature-text { display: flex; flex-direction: column; }
@@ -90,7 +69,7 @@ a {
 .hero__features { animation-delay: 1.3s; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ===== 8. СЕКЦИЯ КАРТОЧЕК НЕДВИЖИМОСТИ ===== */
+/* ===== 6. КАРТОЧКИ НЕДВИЖИМОСТИ ===== */
 .properties { padding: 100px 20px; }
 .properties__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
 .subtitle-blue { color: var(--blue); font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; }
@@ -116,184 +95,276 @@ a {
 .amenities { display: flex; gap: 16px; border-top: 1px solid #E5E7EB; padding-top: 16px; }
 .amenities span { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-gray); font-weight: 500; }
 
-/* =========================================
-   9. СЕКЦИЯ: ИСПРАВЛЕННЫЙ HOW IT WORKS
-========================================= */
+/* ===== 7. КАК ЭТО РАБОТАЕТ ===== */
 .process { padding: 80px 20px; }
 .process__header { text-align: center; margin-bottom: 60px; }
 .process__header h2 { font-size: 36px; color: var(--dark); margin-bottom: 12px; }
 .process__header p { color: var(--text-gray); font-size: 18px; }
-
-.process__steps { 
-    display: flex; 
-    position: relative; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-/* Линия теперь центрирована и не доходит до краев */
-.process__line {
-    position: absolute;
-    top: 48px; /* Ровно по центру 96px иконки */
-    left: 12.5%; /* Отступ от левого края первой иконки */
-    width: 75%; /* Длина до последней иконки */
-    height: 2px;
-    background: linear-gradient(to right, #0B50C3 0%, #00C853 33%, #FF6600 66%, #0B50C3 100%);
-    z-index: 1;
-}
-
-.step { 
-    flex: 1; 
-    text-align: center; 
-    position: relative; 
-    z-index: 2; 
-    padding: 0 16px; 
-}
-
+.process__steps { display: flex; position: relative; max-width: 1200px; margin: 0 auto; }
+.process__line { position: absolute; top: 48px; left: 12.5%; width: 75%; height: 2px; background: linear-gradient(to right, #0B50C3 0%, #00C853 33%, #FF6600 66%, #0B50C3 100%); z-index: 1; }
+.step { flex: 1; text-align: center; position: relative; z-index: 2; padding: 0 16px; }
 .step__icon { width: 96px; height: 96px; margin: 0 auto 24px auto; border-radius: 24px; display: flex; align-items: center; justify-content: center; }
 .step__icon--blue { background-color: #EBF2FF; }
 .step__icon--green { background-color: #E8F7ED; }
 .step__icon--orange { background-color: #FFF0E5; }
 .step__icon img { width: 40px; height: 40px; }
-
-/* МАГИЯ: Позиционируем кружки ровно на линии между шагами */
-.step__number {
-    position: absolute;
-    top: 48px;
-    right: 0; /* Привязываем к правому краю блока шага */
-    transform: translate(50%, -50%); /* Центрируем ровно на стыке колонок! */
-    width: 32px;
-    height: 32px;
-    background-color: var(--blue);
-    color: #FFFFFF;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-    z-index: 3;
-}
-
-/* Для последнего (четвертого) шага кружок прячем немного внутрь */
-.step__number--last {
-    right: 20%;
-}
-
+.step__number { position: absolute; top: 48px; right: 0; transform: translate(50%, -50%); width: 32px; height: 32px; background-color: var(--blue); color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; z-index: 3; }
+.step__number--last { right: 20%; }
 .step h3 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
 .step p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
 
-
 /* =========================================
-   10. НОВАЯ СЕКЦИЯ: СКАЧАТЬ ПРИЛОЖЕНИЕ
+   8. НОВОЕ: СИНЯЯ ПАНЕЛЬ СТАТИСТИКИ
 ========================================= */
-.download-app {
-    background-color: #F4F7F9; /* Светло-голубой фон секции */
-    padding: 80px 0;
-    overflow: hidden; /* Чтобы телефон не ломал верстку */
+.blue-stats {
+    background-color: var(--blue);
+    padding: 60px 0;
+    margin-top: 40px;
 }
 
-.download-app__inner {
+.blue-stats__inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 60px;
-}
-
-.download-app__content {
-    flex: 1;
-    max-width: 550px;
-}
-
-.download-app__content h2 {
-    font-size: 48px;
-    color: var(--dark);
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.download-app__content p {
-    font-size: 18px;
-    color: var(--text-gray);
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.app-stats {
-    display: flex;
-    gap: 32px;
-    margin-bottom: 40px;
-}
-
-.stat-item {
-    display: flex;
     align-items: center;
-    gap: 12px;
 }
 
-.stat-icon {
-    width: 48px; height: 48px;
-    border-radius: 50%;
+.stat-box {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.stat-icon--green { background-color: #E8F7ED; }
-.stat-icon--blue { background-color: #EBF2FF; }
-.stat-icon--orange { background-color: #FFF0E5; }
-
-.stat-text { display: flex; flex-direction: column; }
-.stat-text strong { font-size: 20px; color: var(--dark); line-height: 1.2; }
-.stat-text span { font-size: 13px; color: var(--text-gray); }
-
-.app-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-/* Красивые синие кнопки App Store и Play Market */
-.btn-app {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--blue);
     color: #FFFFFF;
-    padding: 12px 24px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.btn-app:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(11, 80, 195, 0.25);
-}
-
-.btn-app__text { display: flex; flex-direction: column; }
-.btn-app__text span { font-size: 11px; opacity: 0.8; line-height: 1; margin-bottom: 4px; }
-.btn-app__text strong { font-size: 18px; font-weight: 600; line-height: 1; }
-
-.download-app__image {
+    text-align: center;
     flex: 1;
-    display: flex;
-    justify-content: center;
     position: relative;
 }
 
-/* ВАУ-ЭФФЕКТ ДЛЯ ТЕЛЕФОНА */
-.download-app__image img {
-    max-width: 100%;
-    
-    /* Секретный трюк: делаем фон JPG-картинки прозрачным! */
-    mix-blend-mode: darken; 
-    
-    /* Анимация левитации (парения) */
-    animation: floatPhone 4s ease-in-out infinite; 
+/* Разделительные тонкие линии между статистикой */
+.stat-box:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 20%;
+    height: 60%; width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Ключевые кадры для левитации */
-@keyframes floatPhone {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); } /* Телефон плавно взлетает */
-    100% { transform: translateY(0px); }
+.stat-box__icon {
+    width: 64px; height: 64px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
+
+.stat-box__num {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.stat-box__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.stat-box__desc {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* =========================================
+   9. НОВОЕ: КАТАЛОГ (САЙДБАР + СЕТКА)
+========================================= */
+.catalog {
+    padding: 100px 20px;
+}
+
+.catalog__header {
+    margin-bottom: 40px;
+}
+
+.catalog__title {
+    font-size: 32px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.catalog__subtitle {
+    font-size: 16px;
+    color: var(--text-gray);
+}
+
+.catalog__layout {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Левая колонка 280px, правая занимает всё остальное */
+    gap: 40px;
+}
+
+/* САЙДБАР С ФИЛЬТРАМИ */
+.sidebar {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px;
+    height: fit-content;
+    /* МАГИЯ ЛИПУЧКИ: Сайдбар всегда на экране при скролле вниз */
+    position: sticky;
+    top: 24px;
+}
+
+.sidebar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.sidebar__title {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar__clear {
+    font-size: 14px;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.filter-group {
+    margin-bottom: 24px;
+}
+
+.filter-group h4 {
+    font-size: 16px;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+/* Кастомные Радио-кнопки (Кружочки) */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.custom-radio input {
+    display: none; /* Прячем страшный стандартный кружок браузера */
+}
+
+/* Рисуем свой красивый кружок */
+.radio-mark {
+    width: 18px; height: 18px;
+    border: 2px solid #D1D5DB;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s;
+}
+
+/* Что происходит, когда мы кликаем (checked) */
+.custom-radio input:checked + .radio-mark {
+    border-color: var(--blue);
+}
+
+.custom-radio input:checked + .radio-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+}
+
+/* Имитация красивого ползунка (слайдера) */
+.slider-mock { padding: 10px 0; }
+.slider-track { height: 4px; background: #E5E7EB; border-radius: 2px; position: relative; margin-bottom: 16px; }
+.slider-fill { position: absolute; left: 10%; right: 40%; height: 100%; background: var(--blue); border-radius: 2px; }
+.slider-thumb { width: 16px; height: 16px; background: #FFFFFF; border: 2px solid var(--blue); border-radius: 50%; position: absolute; top: 50%; transform: translateY(-50%); box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; }
+.slider-thumb.left { left: 10%; }
+.slider-thumb.right { right: 40%; }
+.slider-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-gray); font-weight: 500;}
+
+
+/* ПРАВАЯ ЧАСТЬ (Каталог и Сортировка) */
+.catalog__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 32px;
+}
+
+.showing { font-size: 14px; color: var(--text-gray); }
+.showing strong { color: var(--dark); font-weight: 700; }
+
+.sort-box { display: flex; align-items: center; gap: 24px; }
+.sort-label { font-size: 14px; color: var(--text-gray); }
+.sort-label strong { color: var(--dark); font-weight: 600; cursor: pointer; }
+
+.view-toggles { display: flex; gap: 8px; }
+.view-btn { width: 32px; height: 32px; border: none; background: #F3F4F6; border-radius: 8px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+.view-btn.active { background: var(--blue); color: #FFFFFF; }
+
+/* Сетка каталога (Переопределяем на 3 колонки вместо 4) */
+.catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Блок заглушка Карты */
+.map-placeholder {
+    background: #F4F7F9;
+    border-radius: 16px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--text-gray);
+}
+.map-icon { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--dark); }
+.map-text { font-size: 14px; }
+
+/* ===== 10. СЕКЦИЯ: СКАЧАТЬ ПРИЛОЖЕНИЕ ===== */
+.download-app { background-color: #F4F7F9; padding: 80px 0; overflow: hidden; }
+.download-app__inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+.download-app__content { flex: 1; max-width: 550px; }
+.download-app__content h2 { font-size: 48px; color: var(--dark); line-height: 1.2; margin-bottom: 20px; }
+.download-app__content p { font-size: 18px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.6; }
+.app-stats { display: flex; gap: 32px; margin-bottom: 40px; }
+.stat-item { display: flex; align-items: center; gap: 12px; }
+.stat-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.stat-icon--green { background-color: #E8F7ED; }
+.stat-icon--blue { background-color: #EBF2FF; }
+.stat-icon--orange { background-color: #FFF0E5; }
+.stat-text { display: flex; flex-direction: column; }
+.stat-text strong { font-size: 20px; color: var(--dark); line-height: 1.2; }
+.stat-text span { font-size: 13px; color: var(--text-gray); }
+.app-buttons { display: flex; gap: 20px; }
+.btn-app { display: flex; align-items: center; gap: 12px; background: var(--blue); color: #FFFFFF; padding: 12px 24px; border-radius: 12px; transition: all 0.3s ease; }
+.btn-app:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(11, 80, 195, 0.25); }
+.btn-app__text { display: flex; flex-direction: column; }
+.btn-app__text span { font-size: 11px; opacity: 0.8; line-height: 1; margin-bottom: 4px; }
+.btn-app__text strong { font-size: 18px; font-weight: 600; line-height: 1; }
+.download-app__image { flex: 1; display: flex; justify-content: center; position: relative; }
+.download-app__image img { max-width: 100%; mix-blend-mode: darken; animation: floatPhone 4s ease-in-out infinite; }
+@keyframes floatPhone { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
