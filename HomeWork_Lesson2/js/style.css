@@ -1,0 +1,143 @@
+/* ===== 1. ПЕРЕМЕННЫЕ (Наши фирменные цвета из макета) ===== */
+:root {
+    --orange: #FF6600; /* Яркий оранжевый акцент */
+    --blue: #0B50C3;   /* Синий для кнопок */
+    --dark: #0B2250;   /* Темно-синий текст */
+    --text-gray: #4B5563; /* Серый для меню */
+    --font-main: 'Outfit', sans-serif; /* Наш крутой шрифт */
+}
+
+/* ===== 2. БАЗОВЫЙ СБРОС ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--dark);
+    background-color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Контейнер ограничивает ширину контента */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== 3. ШАПКА (Header) ===== */
+.header {
+    padding: 20px 0;
+    background: #FFFFFF;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    font-weight: 500;
+    color: var(--text-gray);
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--orange);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Универсальная кнопка */
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn--orange {
+    background: var(--orange);
+    color: #FFFFFF;
+}
+
+.btn--orange:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
+}
+
+/* ===== 4. ГЛАВНЫЙ ЭКРАН (Hero) ===== */
+.hero {
+    position: relative;
+    height: 80vh; 
+    min-height: 600px;
+    margin: 0 20px; 
+    border-radius: 24px; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+}
+
+/* Контейнер для фона */
+.hero__bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+/* АНИМАЦИЯ: Плавное уменьшение картинки */
+.hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    animation: bgZoomOut 3s ease-out forwards; 
+}
+
+/* Темная пелена */
+.hero__overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(11, 34, 80, 0.8) 0%, rgba(11, 34, 80, 0.3) 100%);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+}
+
+/* Ключевые кадры для анимации */
+@keyframes bgZoomOut {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
