@@ -89,15 +89,15 @@ a { text-decoration: none; color: inherit; }
 .property-card:hover .property-card__img-wrapper img { transform: scale(1.08); }
 .card-badges { position: absolute; top: 16px; left: 16px; display: flex; gap: 8px; z-index: 2;}
 .card-badges--static { position: static; top: auto; left: auto; }
+
+/* ОБНОВЛЕННЫЕ БЕЙДЖИ (Нежные и полупрозрачные) */
 .badge { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; }
 .badge img { width: 14px; height: 14px; } 
-
-/* ИСПРАВЛЕНО: "Featured" теперь всегда оранжевый и полупрозрачный */
-.badge--orange { background: rgba(255, 102, 0, 0.1); color: #FF6600; }
+.badge--orange { background: rgba(255, 102, 0, 0.1); color: #FF6600; } /* Теперь оранжевый ВСЕГДА! */
 .badge--green { background: rgba(0, 200, 83, 0.1); color: #00C853; }
 .badge--blue { background: rgba(11, 80, 195, 0.1); color: var(--blue); }
 
-.badge-micro { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; font-size: 10px; font-weight: 600; border-radius: 100px; margin-left: 8px;}
+.badge-micro { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; font-size: 10px; font-weight: 600; border-radius: 100px; margin-left: 8px; background: rgba(0, 200, 83, 0.1); color: #00C853;}
 .badge-micro img { width: 10px; height: 10px;}
 
 .heart-btn { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: none; background: #FFFFFF; color: var(--text-gray); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: color 0.3s, transform 0.2s; z-index: 2;}
@@ -128,7 +128,33 @@ a { text-decoration: none; color: inherit; }
 .step h3 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
 .step p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
 
-/* ===== 8. СКАЧАТЬ ПРИЛОЖЕНИЕ ===== */
+/* =========================================
+   8. НОВАЯ СЕКЦИЯ: ABOUT US
+========================================= */
+.about { margin-bottom: 100px; }
+.about__top { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; align-items: center; }
+.about__content h2 { font-size: 40px; color: var(--dark); margin-bottom: 24px; line-height: 1.2; }
+.about__content p { font-size: 16px; color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; }
+
+.about__tags { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.about-tag { display: flex; align-items: center; gap: 8px; font-weight: 500; color: var(--dark); font-size: 14px; background: #F9FAFB; padding: 12px 16px; border-radius: 12px;}
+.about-tag img { width: 20px; height: 20px; }
+
+.about__image-wrap { position: relative; border-radius: 24px; height: 100%; min-height: 400px;}
+.about__main-img { width: 100%; height: 400px; object-fit: cover; border-radius: 24px; }
+.about__floating-badge { position: absolute; bottom: 32px; left: -32px; background: #FFFFFF; padding: 20px 32px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; }
+.about__floating-badge strong { font-size: 28px; color: var(--blue); font-weight: 700; line-height: 1;}
+.about__floating-badge span { font-size: 13px; color: var(--text-gray); font-weight: 500; margin-top: 4px;}
+
+.about__features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.about-feature-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 24px; padding: 40px 32px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s; }
+.about-feature-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.about-feature-icon { width: 64px; height: 64px; background: #EBF2FF; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.about-feature-icon img { width: 32px; height: 32px; }
+.about-feature-card h4 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
+.about-feature-card p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
+
+/* ===== 9. СКАЧАТЬ ПРИЛОЖЕНИЕ ===== */
 .download-app { background-color: #F4F7F9; padding: 80px 0; overflow: hidden; }
 .download-app__inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .download-app__content { flex: 1; max-width: 550px; }
@@ -150,10 +176,9 @@ a { text-decoration: none; color: inherit; }
 .btn-app__text span { font-size: 11px; opacity: 0.8; line-height: 1; margin-bottom: 4px; }
 .btn-app__text strong { font-size: 18px; font-weight: 600; line-height: 1; }
 .download-app__image { flex: 1; display: flex; justify-content: center; position: relative; }
-.download-app__image img { max-width: 100%; animation: floatPhone 4s ease-in-out infinite; }
-@keyframes floatPhone { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+.download-app__image img { max-width: 100%; } 
 
-/* ===== 9. СИНЯЯ ПАНЕЛЬ СТАТИСТИКИ ===== */
+/* ===== 10. СИНЯЯ ПАНЕЛЬ СТАТИСТИКИ ===== */
 .blue-stats { background-color: var(--blue); padding: 60px 0; margin-top: 0; }
 .blue-stats__inner { display: flex; justify-content: space-between; align-items: center; }
 .stat-box { display: flex; flex-direction: column; align-items: center; color: #FFFFFF; text-align: center; flex: 1; position: relative; }
@@ -163,7 +188,7 @@ a { text-decoration: none; color: inherit; }
 .stat-box__title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
 .stat-box__desc { font-size: 14px; opacity: 0.8; }
 
-/* ===== 10. КАТАЛОГ И РАЗДЕЛИТЕЛИ ===== */
+/* ===== 11. КАТАЛОГ И РАЗДЕЛИТЕЛИ ===== */
 .section-divider { display: flex; align-items: center; text-align: center; color: var(--text-gray); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 80px 0 40px; }
 .section-divider::before, .section-divider::after { content: ''; flex: 1; border-bottom: 1px dashed #D1D5DB; }
 .section-divider::before { margin-right: 24px; }
@@ -213,7 +238,7 @@ a { text-decoration: none; color: inherit; }
 .map-text { font-size: 14px; }
 
 
-/* ===== 11. СТРАНИЦА ОПИСАНИЯ (PROPERTY DETAILS) ===== */
+/* ===== 12. СТРАНИЦА ОПИСАНИЯ (PROPERTY DETAILS) ===== */
 .property-details { margin-bottom: 80px; }
 .gallery { position: relative; height: 500px; border-radius: 24px; overflow: hidden; margin-bottom: 40px; }
 .gallery__main { width: 100%; height: 100%; object-fit: cover; }
@@ -263,12 +288,12 @@ a { text-decoration: none; color: inherit; }
 .agent-name { font-size: 18px; font-weight: 700; color: var(--dark); display: flex; align-items: center; margin-bottom: 4px; }
 .agent-role { font-size: 14px; color: var(--text-gray); }
 
-/* ===== 12. ПОХОЖИЕ ОБЪЕКТЫ ===== */
+/* ===== 13. ПОХОЖИЕ ОБЪЕКТЫ ===== */
 .similar-properties { margin-bottom: 80px; }
 .similar-title { font-size: 28px; color: var(--dark); margin-bottom: 32px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-/* ===== 13. POST PROPERTY ===== */
+/* ===== 14. POST PROPERTY ===== */
 .post-property { margin-bottom: 100px; }
 .post-property__header { text-align: center; margin-bottom: 40px; }
 .post-property__header h2 { font-size: 36px; color: var(--dark); margin-bottom: 12px; }
@@ -298,7 +323,7 @@ a { text-decoration: none; color: inherit; }
 .pp-back { color: var(--text-gray); font-weight: 500; cursor: pointer; }
 .pp-back:hover { color: var(--dark); }
 
-/* ===== 14. DASHBOARD (НОВАЯ СЕКЦИЯ!) ===== */
+/* ===== 15. DASHBOARD ===== */
 .dashboard { margin-bottom: 100px; }
 .dashboard__header { margin-bottom: 40px; }
 .dashboard__header h2 { font-size: 36px; color: var(--dark); margin-bottom: 8px; }
