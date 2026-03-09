@@ -131,7 +131,7 @@ a { text-decoration: none; color: inherit; }
 .step h3 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
 .step p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
 
-/* ===== 8. СКАЧАТЬ ПРИЛОЖЕНИЕ (ТЕЛЕФОН ПАРИТ!) ===== */
+/* ===== 8. СКАЧАТЬ ПРИЛОЖЕНИЕ (ТЕЛЕФОН ПАРИТ) ===== */
 .download-app { background-color: #F4F7F9; padding: 80px 0; overflow: hidden; }
 .download-app__inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .download-app__content { flex: 1; max-width: 550px; }
@@ -154,7 +154,6 @@ a { text-decoration: none; color: inherit; }
 .btn-app__text strong { font-size: 18px; font-weight: 600; line-height: 1; }
 
 .download-app__image { flex: 1; display: flex; justify-content: center; position: relative; }
-/* ИСПРАВЛЕНО: Анимация парения для телефона возвращена! */
 .download-app__image img { max-width: 100%; animation: floatPhone 4s ease-in-out infinite; }
 @keyframes floatPhone { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
 
@@ -303,7 +302,7 @@ a { text-decoration: none; color: inherit; }
 .pp-back { color: var(--text-gray); font-weight: 500; cursor: pointer; }
 .pp-back:hover { color: var(--dark); }
 
-/* ===== 14. ИДЕАЛЬНЫЙ DASHBOARD (САЙДБАР СЛЕВА И РОВНЫЕ СПИСКИ) ===== */
+/* ===== 14. ИДЕАЛЬНЫЙ DASHBOARD ===== */
 .dashboard-layout { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
 
 .dashboard-sidebar { background: #FFFFFF; border-radius: 24px; border: 1px solid #E5E7EB; padding: 24px; height: fit-content; position: sticky; top: 24px;}
@@ -312,13 +311,14 @@ a { text-decoration: none; color: inherit; }
 .dash-profile-info span { font-size: 12px; color: var(--text-gray); }
 .dash-bell { position: absolute; right: 0; top: 0; cursor: pointer; }
 
+/* Навигация слева */
 .dash-nav { display: flex; flex-direction: column; gap: 8px; margin-bottom: 40px;}
-.dash-link { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 12px; color: var(--text-gray); font-weight: 500; transition: all 0.2s; }
-.dash-link img { width: 20px; height: 20px; margin-right: 12px; opacity: 0.6; }
+.dash-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-gray); font-weight: 500; transition: all 0.2s; }
+.dash-link img { width: 20px; height: 20px; opacity: 0.6; }
 .dash-link:hover { background: #F3F4F6; color: var(--dark); }
 .dash-link.active { background: var(--blue); color: #FFFFFF; }
 .dash-link.active img { opacity: 1; }
-.dash-badge { background: #FFF0E5; color: var(--orange); padding: 2px 8px; border-radius: 100px; font-size: 12px; font-weight: 600;}
+.dash-badge { margin-left: auto; background: #FFF0E5; color: var(--orange); padding: 2px 8px; border-radius: 100px; font-size: 12px; font-weight: 600;}
 
 .dash-logout { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--text-gray); font-weight: 500; border-top: 1px solid #E5E7EB; margin-top: 20px; cursor: pointer;}
 .dash-logout:hover { color: #FF3B30; }
@@ -333,7 +333,7 @@ a { text-decoration: none; color: inherit; }
 .stat-card__value { font-size: 32px; font-weight: 700; color: var(--dark); line-height: 1.2;}
 .stat-card__label { font-size: 14px; color: var(--text-gray); }
 
-/* ИСПРАВЛЕННЫЙ СПИСОК "MY LISTINGS" С ВЫРОВНЕННЫМИ ИКОНКАМИ */
+/* СПИСОК "MY LISTINGS" (Вертикальные кнопки) */
 .dashboard__listings { margin-bottom: 60px; background: #FFFFFF; padding: 32px; border-radius: 24px; border: 1px solid #E5E7EB;}
 .listings__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid #E5E7EB; padding-bottom: 16px;}
 .listings__header h3 { font-size: 20px; color: var(--dark); }
@@ -343,18 +343,13 @@ a { text-decoration: none; color: inherit; }
     border-bottom: 1px solid #E5E7EB; 
     padding: 24px 0; 
     display: flex; 
-    align-items: center; /* Центрируем элементы по вертикали */
+    align-items: flex-start; 
     gap: 24px; 
 }
 .listing-item:last-child { border-bottom: none; padding-bottom: 0; }
 .listing-item > img { width: 160px; height: 100px; object-fit: cover; border-radius: 12px; }
 
-.listing-item__info { 
-    flex: 1; /* Этот блок занимает все свободное место и толкает бейдж с кнопками вправо */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+.listing-item__info { flex: 1; display: flex; flex-direction: column; }
 .listing-item__info h4 { font-size: 18px; color: var(--dark); margin-bottom: 4px; }
 .listing-loc { font-size: 14px; color: var(--text-gray); margin-bottom: 8px;}
 .listing-item__price { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 12px;}
@@ -362,28 +357,29 @@ a { text-decoration: none; color: inherit; }
 
 .listing-meta { display: flex; gap: 16px; font-size: 13px; color: var(--text-gray); font-weight: 500;}
 .listing-meta span { display: flex; align-items: center; gap: 6px; }
-/* Жестко ограничиваем размер иконок глазика и трубки */
 .listing-meta img { width: 16px; height: 16px; } 
 
 .listing-badge {
-    background: rgba(0, 200, 83, 0.1);
-    color: #00C853;
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: lowercase; /* Как в макете */
+    background: rgba(0, 200, 83, 0.1); color: #00C853;
+    padding: 4px 12px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; text-transform: lowercase;
 }
 
-.listing-item__actions { display: flex; align-items: center; gap: 8px; }
-.listing-item__actions button { 
-    width: 36px; height: 36px; border: 1px solid #E5E7EB; border-radius: 8px; 
-    background: transparent; display: flex; align-items: center; justify-content: center; 
-    cursor: pointer; transition: background 0.2s;
+/* Вертикальная колонка кнопок справа */
+.listing-item__actions { 
+    display: flex; flex-direction: column; 
+    align-items: flex-end; gap: 16px; 
 }
-.listing-item__actions button:hover { background: #F3F4F6; }
-/* Жестко ограничиваем размер иконок действий (корзина, карандаш) */
-.listing-item__actions button img { width: 18px; height: 18px; }
+.actions-top { display: flex; align-items: center; gap: 12px; }
+.action-btn { 
+    width: 24px; height: 24px; 
+    background: transparent; border: none; 
+    cursor: pointer; 
+    display: flex; align-items: center; justify-content: center; 
+    transition: transform 0.2s;
+}
+.action-btn:hover { transform: scale(1.1); }
+.action-btn img { width: 20px; height: 20px; object-fit: contain; }
 
 .dashboard__performance h3 { font-size: 20px; color: var(--dark); margin-bottom: 24px; }
 .performance__chart-placeholder { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 24px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--text-gray); }
