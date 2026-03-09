@@ -8,7 +8,7 @@
 }
 
 /* ===== 2. БАЗОВЫЙ СБРОС ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 body { font-family: var(--font-main); color: var(--dark); background-color: #FFFFFF; }
 a { text-decoration: none; color: inherit; }
 .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
@@ -22,7 +22,8 @@ a { text-decoration: none; color: inherit; }
 .nav__link { font-weight: 500; color: var(--text-gray); transition: color 0.3s ease; }
 .nav__link:hover { color: var(--orange); }
 .header__actions { display: flex; align-items: center; gap: 24px; }
-.login-btn { display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; }
+.login-btn { display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; transition: color 0.2s; }
+.login-btn:hover { color: var(--blue); }
 .btn { padding: 14px 28px; border-radius: 12px; font-weight: 600; font-family: var(--font-main); cursor: pointer; border: none; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px;}
 .btn--orange { background: var(--orange); color: #FFFFFF; }
 .btn--orange:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2); }
@@ -182,7 +183,7 @@ a { text-decoration: none; color: inherit; }
 .sidebar { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px; height: fit-content; }
 .sidebar__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #E5E7EB; }
 .sidebar__title { font-weight: 600; font-size: 18px; color: var(--dark); display: flex; align-items: center; gap: 8px; }
-.sidebar__clear { font-size: 14px; color: var(--blue); font-weight: 600; }
+.sidebar__clear { font-size: 14px; color: var(--blue); font-weight: 600; cursor: pointer; }
 .filter-group { margin-bottom: 24px; }
 .filter-group__label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;}
 .filter-group__label-row h4 { font-size: 16px; color: var(--dark); margin: 0; }
@@ -339,13 +340,7 @@ a { text-decoration: none; color: inherit; }
 .listings__header h3 { font-size: 20px; color: var(--dark); }
 .listings__header a { font-size: 14px; color: var(--blue); font-weight: 600; }
 
-.listing-item { 
-    border-bottom: 1px solid #E5E7EB; 
-    padding: 24px 0; 
-    display: flex; 
-    align-items: flex-start; 
-    gap: 24px; 
-}
+.listing-item { border-bottom: 1px solid #E5E7EB; padding: 24px 0; display: flex; align-items: flex-start; gap: 24px; }
 .listing-item:last-child { border-bottom: none; padding-bottom: 0; }
 .listing-item > img { width: 160px; height: 100px; object-fit: cover; border-radius: 12px; }
 
@@ -366,18 +361,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Вертикальная колонка кнопок справа */
-.listing-item__actions { 
-    display: flex; flex-direction: column; 
-    align-items: flex-end; gap: 16px; 
-}
+.listing-item__actions { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
 .actions-top { display: flex; align-items: center; gap: 12px; }
-.action-btn { 
-    width: 24px; height: 24px; 
-    background: transparent; border: none; 
-    cursor: pointer; 
-    display: flex; align-items: center; justify-content: center; 
-    transition: transform 0.2s;
-}
+.action-btn { width: 24px; height: 24px; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;}
 .action-btn:hover { transform: scale(1.1); }
 .action-btn img { width: 20px; height: 20px; object-fit: contain; }
 
@@ -405,7 +391,7 @@ a { text-decoration: none; color: inherit; }
 .about-feature-card h4 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
 .about-feature-card p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
 
-/* ===== 16. СЕКЦИЯ: OUR JOURNEY (TIMELINE) - ТЕПЕРЬ ПОСЛЕ ABOUT US ===== */
+/* ===== 16. СЕКЦИЯ: OUR JOURNEY (TIMELINE) ===== */
 .journey { margin-bottom: 100px; }
 .journey-header { text-align: center; margin-bottom: 60px; }
 .journey-header h2 { font-size: 36px; color: var(--dark); margin-bottom: 12px; }
@@ -428,8 +414,9 @@ a { text-decoration: none; color: inherit; }
 
 .timeline-content { 
     background: #FFFFFF; padding: 24px; border-radius: 16px; border: 1px solid #E5E7EB; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: inline-block; width: 100%; text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: inline-block; width: 100%; text-align: left; transition: transform 0.3s ease;
 }
+.timeline-content:hover { transform: translateY(-5px); }
 .timeline-content h4 { font-size: 24px; margin-bottom: 8px; }
 .timeline-content strong { font-size: 18px; color: var(--dark); display: block; margin-bottom: 12px; }
 .timeline-content p { font-size: 14px; color: var(--text-gray); line-height: 1.5; }
@@ -439,7 +426,8 @@ a { text-decoration: none; color: inherit; }
 .team-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; background: #F9FAFB; border-radius: 24px; padding: 60px; }
 .team-text h2 { font-size: 36px; color: var(--dark); margin-bottom: 24px; }
 .team-text p { font-size: 16px; color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; }
-.team-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.team-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+.team-image img:hover { transform: scale(1.02); }
 
 /* ===== 18. СЕКЦИЯ: CONTACT US ===== */
 .contact-section { margin-bottom: 100px; }
@@ -475,34 +463,48 @@ a { text-decoration: none; color: inherit; }
 
 .social-follow { margin-top: 32px; padding-top: 24px; border-top: 1px solid #E5E7EB; }
 .social-follow span { font-size: 14px; font-weight: 600; color: var(--dark); display: block; margin-bottom: 16px;}
-/* ИСПРАВЛЕНО: Стили для круглых соцсетей */
+/* ИСПРАВЛЕННЫЕ СОЦСЕТИ */
 .social-icons { display: flex; gap: 12px; }
 .social-icons a { 
     display: flex; align-items: center; justify-content: center; 
     width: 40px; height: 40px; 
-    border: 1px solid #E5E7EB; border-radius: 50%; 
-    transition: all 0.2s; 
+    border: 1px solid #E5E7EB; border-radius: 50%; background: #FFFFFF;
+    transition: all 0.3s ease; 
 }
-.social-icons a:hover { border-color: var(--blue); transform: translateY(-3px); }
-.social-icons img { width: 18px; height: 18px; object-fit: contain; }
+.social-icons a:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 4px 10px rgba(11, 80, 195, 0.1); }
+.social-icons img { width: 18px; height: 18px; object-fit: contain; transition: filter 0.3s ease;}
 
 /* ===== 19. ФИНАЛЬНЫЙ ПОДВАЛ (FOOTER) ===== */
-.footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 80px 20px 40px; margin-top: 80px; }
+/* ИСПРАВЛЕНО: Точный темно-синий цвет из макета */
+.footer { background: #0B1727; color: rgba(255,255,255,0.7); padding: 80px 20px 40px; margin-top: 80px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
 .brand-col p { font-size: 14px; line-height: 1.6; margin-bottom: 24px; max-width: 300px; }
-.footer-logo { margin-bottom: 24px; display: flex; align-items: center; gap: 12px; color: #FFFFFF; font-size: 24px; font-weight: 700; }
-.f-logo-img { filter: brightness(0) invert(1); width: 32px; height: 32px; }
 
-.footer-socials { display: flex; gap: 16px; }
-.footer-socials img { width: 40px; height: 40px; filter: brightness(0) invert(1); opacity: 0.7; transition: opacity 0.2s; background: rgba(255,255,255,0.1); border-radius: 50%; padding: 8px;}
-.footer-socials img:hover { opacity: 1; }
+/* ИСПРАВЛЕНО: Белый текст и синий Connect в футере */
+.footer-logo { margin-bottom: 24px; display: flex; align-items: center; gap: 10px; color: #FFFFFF; font-size: 24px; font-weight: 700; }
+.footer-logo img { width: 32px; height: 32px; }
+
+/* ИСПРАВЛЕНО: Маленькие аккуратные круглые соцсети в футере */
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.05); border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.footer-socials a:hover { background: var(--blue); transform: translateY(-3px); }
+.footer-socials img { width: 16px; height: 16px; filter: brightness(0) invert(1); }
 
 .footer-col h4 { color: #FFFFFF; margin-bottom: 24px; font-size: 18px; }
 .footer-link { display: block; color: inherit; margin-bottom: 16px; font-size: 14px; transition: color 0.3s; }
 .footer-link:hover { color: var(--orange); }
 
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 24px;}
+
+/* ИСПРАВЛЕНО: Интерактивные кликабельные контакты */
 .footer-contact-row { display: flex; gap: 32px; align-items: center; }
-.footer-contact-row span { display: flex; align-items: center; gap: 8px; }
+.footer-contact-row a { display: flex; align-items: center; gap: 8px; transition: color 0.2s; cursor: pointer; }
+.footer-contact-row a:hover { color: #FFFFFF; }
+.footer-contact-row a img { width: 18px; height: 18px; object-fit: contain; }
 
 .footer-copyright { text-align: center; font-size: 13px; opacity: 0.6; }
