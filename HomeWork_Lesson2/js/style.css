@@ -16,6 +16,19 @@ a { text-decoration: none; color: inherit; }
 /* ===== 3. ШАПКА ===== */
 .header { padding: 20px 0; background: #FFFFFF; }
 .header__inner { display: flex; justify-content: space-between; align-items: center; }
+/* ИСПРАВЛЕНО: Стили для правильного отображения логотипа */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: var(--dark); 
+}
+.logo img { 
+    width: 32px; 
+    height: 32px; 
+}
 .nav { display: flex; gap: 40px; }
 .nav__link { font-weight: 500; color: var(--text-gray); transition: color 0.3s ease; }
 .nav__link:hover { color: var(--orange); }
