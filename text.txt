@@ -1,1 +1,22 @@
-я редачу сайт 
+// Карусель для відгуків
+    const reviewsSwiper = new Swiper('.reviews-swiper', {
+        loop: true, // Безкінечне гортання
+        grabCursor: true, // Рука при наведенні
+        spaceBetween: 32, // Відстань між картками (як у дизайні)
+        breakpoints: {
+            // Налаштування для телефонів
+            320: {
+                slidesPerView: 1,
+            },
+            // Налаштування для планшетів та ПК
+            768: {
+                slidesPerView: 3, // Показуємо одразу 3 відгуки
+            }
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            bulletClass: 'review__dot', // Старий клас крапочки
+            bulletActiveClass: 'review__dot--active', // Старий активний клас
+        },
+    });
