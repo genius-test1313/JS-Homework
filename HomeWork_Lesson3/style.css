@@ -198,7 +198,15 @@ a { text-decoration: none; }
     display: flex; align-items: center; justify-content: center;
 }
 .carousel-nav button:hover { transform: scale(1.1); }
-.carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5; transition: opacity 0.3s;}
+
+/* Вот она магия для корректного клика! */
+.carousel-nav button img { 
+    filter: brightness(0) invert(1); 
+    width: 24px; 
+    opacity: 0.5; 
+    transition: opacity 0.3s;
+    pointer-events: none; 
+}
 .carousel-nav button:hover img { opacity: 1; }
 
 .swiper { width: 100%; overflow: hidden;}
@@ -211,27 +219,25 @@ a { text-decoration: none; }
     cursor: pointer;
 }
 
-/* Оболочка для картинки, чтобы при зуме она не вылезала за края */
 .img-wrapper {
     width: 100%;
     height: 186px;
     border-radius: 16px;
-    overflow: hidden; /* Скрывает всё, что выходит за рамки */
+    overflow: hidden; 
 }
 
 .img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease; /* Плавный зум */
+    transition: transform 0.5s ease; 
 }
 
-/* Эффект наведения на карточку: зум картинки и небольшое поднятие всей карточки */
 .card:hover {
     transform: translateY(-5px);
 }
 .card:hover .img-wrapper img {
-    transform: scale(1.08); /* Картинка увеличивается внутри */
+    transform: scale(1.08); 
 }
 
 .card-info h4 {
@@ -252,7 +258,6 @@ a { text-decoration: none; }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Классы, которые мы добавили в HTML */
 .fade-up-1 {
     opacity: 0;
     animation: fadeUp 0.8s ease-out forwards;
@@ -260,10 +265,10 @@ a { text-decoration: none; }
 
 .fade-up-2 {
     opacity: 0;
-    animation: fadeUp 0.8s ease-out 0.2s forwards; /* Задержка 0.2 сек */
+    animation: fadeUp 0.8s ease-out 0.2s forwards; 
 }
 
 .fade-up-3 {
     opacity: 0;
-    animation: fadeUp 0.8s ease-out 0.4s forwards; /* Задержка 0.4 сек */
+    animation: fadeUp 0.8s ease-out 0.4s forwards; 
 }
