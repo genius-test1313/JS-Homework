@@ -1,61 +1,34 @@
-<section class="hero swiper hero-swiper" id="hero" style="background: none; padding: 0;">
+<div class="swiper card-swiper" style="width: 293px; padding-bottom: 25px; margin-bottom: 12px;">
     <div class="swiper-wrapper">
-        
-        <div class="swiper-slide" style="background:url('assets/img/hero_bg.png') center/cover no-repeat; padding-top: 183px; padding-bottom: 220px; box-sizing: border-box;">
-            <div class="hero__pretitle">
-                <img src="assets/img/hero_pretitle-icon.png" alt="icon" class="hero__pretitle-icon">
-                <p>VIPGold - багатопрофільне ательє</p>
-            </div>
-            <h1 class="hero__title">Брендові Годинники</h1>
-            <p class="hero__subtitle">Ми пропонуємо безкоштовну оцінку наручних годинників, діамантів, ювелірних прикрас і антикваріату.</p>
-            <a href="#" class="hero__btn">Безкоштовна Online Оцінка</a>
+        <div class="swiper-slide">
+            <img src="assets/img/card_1.png" alt="card img" class="card__img" style="margin-bottom: 0;">
         </div>
-
-        <div class="swiper-slide" style="background:url('assets/img/hero_bg.png') center/cover no-repeat; padding-top: 183px; padding-bottom: 220px; box-sizing: border-box;">
-            <div class="hero__pretitle">
-                <img src="assets/img/hero_pretitle-icon.png" alt="icon" class="hero__pretitle-icon">
-                <p>VIPGold - багатопрофільне ательє</p>
-            </div>
-            <h1 class="hero__title">Елітні Прикраси</h1>
-            <p class="hero__subtitle">Купівля та продаж ювелірних виробів найвищої якості за вигідними цінами.</p>
-            <a href="#" class="hero__btn">Безкоштовна Online Оцінка</a>
-        </div>
-
-    </div>
-
-    <div class="hero__bottom" style="position: absolute; bottom: 100px; left: 0; width: 100%; z-index: 100; margin-top: 0;">
-        <a href="#evaluation" class="hero__bottom-scroll-down">Scroll Down</a>
-        <div class="hero__bottom-right">
-            <div class="hero__bottom-right-dots swiper-pagination"></div>
-            
-            <p class="hero__bottom-right-counter"><span class="swiper-current-num">1</span>/2</p>
-            
-            <img src="assets/img/hero_bottom_arrow.svg" alt="next" class="hero__bottom-right-arrow swiper-button-next" style="cursor: pointer;">
+        <div class="swiper-slide">
+            <img src="assets/img/card_2.png" alt="card img" class="card__img" style="margin-bottom: 0;">
         </div>
     </div>
-</section>
+    <div class="swiper-pagination card__img-counter" style="position: absolute; bottom: 0;"></div>
+</div>
 
 
 
 
 
-$(document).ready(function () {
-    const heroSwiper = new Swiper('.hero-swiper', {
-        loop: true, // Бесконечная прокрутка
-        navigation: {
-            nextEl: '.swiper-button-next', // Подключили стрелку
-        },
+
+
+
+
+
+
+
+// Слайдер для плашок товарів
+    const cardSwipers = new Swiper('.card-swiper', {
+        loop: true, // Безкінечне гортання
+        grabCursor: true, // Курсор "рука" при наведенні
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            bulletClass: 'hero__bottom-right-dot', // Класс неактивной точки
-            bulletActiveClass: 'hero__bottom-right-dot--active', // Класс активной точки
+            bulletClass: 'card__img-span', // Беремо старі класи дизайнера
+            bulletActiveClass: 'card__img-span--active', // Старий активний клас
         },
-        on: {
-            slideChange: function () {
-                // Обновляем цифру счетчика при перелистывании
-                $('.swiper-current-num').text(this.realIndex + 1);
-            }
-        }
     });
-});
