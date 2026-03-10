@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,60 +18,59 @@
         
         <main class="main-container">
             
-            <header class="header">
-                <a href="#" class="logo">
-                    <img src="assets/icons/logo.svg" alt="Homes Arrow Logo">
-                    <span>Homes<br>Arrow</span>
-                </a>
+            <div class="hero-bg" style="background-image: url('assets/images/foto-1.jpg');">
                 
-                <nav class="nav">
-                    <a href="#" class="nav-link active">Properties</a>
-                    <a href="#" class="nav-link">Blog</a>
-                    <a href="#" class="nav-link">Pages</a>
-                    <a href="#" class="nav-link">Agents</a>
-                </nav>
-                
-                <div class="header-actions">
-                    <a href="#" class="login-btn">
-                        <img src="assets/icons/user.svg" alt="User"> Log In
-                    </a>
-                    <button class="btn-outline">Submit Listing ↗</button>
-                </div>
-            </header>
-
-            <section class="hero-text">
-                <h1>Find Real Estate and Get Your<br>Dream Space</h1>
-                <p>We are a real estate agency that will help you find the best residence you dream of, let's<br>discuss for your dream house?</p>
-            </section>
-
-            <div class="search-widget">
-                <div class="search-tabs">
-                    <button class="tab active" onclick="switchTab(this)">Sell</button>
-                    <button class="tab" onclick="switchTab(this)">Rent</button>
-                </div>
-                <div class="search-form">
-                    <div class="input-group">
-                        <img src="assets/icons/home-2.svg" alt="Home" class="search-icon">
-                        <select>
-                            <option>Property type</option>
-                            <option>Apartment</option>
-                            <option>Villa</option>
-                        </select>
+                <header class="header">
+                    <div class="header-inner">
+                        <a href="#" class="logo">
+                            <img src="assets/icons/logo.svg" alt="Homes Arrow Logo">
+                            <span>Homes<br>Arrow</span>
+                        </a>
+                        
+                        <nav class="nav">
+                            <a href="#" class="nav-link active">Properties</a>
+                            <a href="#" class="nav-link">Blog</a>
+                            <a href="#" class="nav-link">Pages</a>
+                            <a href="#" class="nav-link">Agents</a>
+                        </nav>
+                        
+                        <div class="header-actions">
+                            <a href="#" class="login-btn">
+                                <img src="assets/icons/user.svg" alt="User"> Log In
+                            </a>
+                            <button class="btn-outline">Submit Listing ↗</button>
+                        </div>
                     </div>
-                    <div class="divider"></div>
-                    <div class="input-group full-width">
-                        <span class="text-icon">🔍</span>
-                        <input type="text" placeholder="Search by location or Property ID...">
+                </header>
+
+                <section class="hero-text">
+                    <h1>Find Real Estate and Get Your<br>Dream Space</h1>
+                    <p>We are a real estate agency that will help you find the best residence you dream of, let's<br>discuss for your dream house?</p>
+                </section>
+
+                <div class="search-widget">
+                    <div class="search-tabs">
+                        <button class="tab active" onclick="switchTab(this)">Sell</button>
+                        <button class="tab" onclick="switchTab(this)">Rent</button>
                     </div>
-                    <button class="btn-dark">Search</button>
+                    <div class="search-form">
+                        <div class="input-group">
+                            <img src="assets/icons/home-2.svg" alt="Home" class="search-icon">
+                            <select>
+                                <option>Property type</option>
+                                <option>Apartment</option>
+                                <option>Villa</option>
+                            </select>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="input-group full-width">
+                            <img src="assets/icons/search-normal.svg" alt="Search" class="search-icon">
+                            <input type="text" placeholder="Search by location or Property ID...">
+                        </div>
+                        <button class="btn-dark">Search</button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="assets/images/foto-1.jpg" alt="Modern Building">
-            </div>
-
-            <section class="popular-section">
+            </div> <section class="popular-section">
                 <div class="popular-header">
                     <h2>Popular Residence</h2>
                     <div class="carousel-nav">
@@ -133,15 +131,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
     <script>
-        // Переключение табов Sell / Rent
         function switchTab(element) {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             element.classList.add('active');
         }
 
-        // Запуск карусели (когда страница полностью загрузилась)
         document.addEventListener('DOMContentLoaded', function() {
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: "auto", 
