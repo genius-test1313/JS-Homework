@@ -7,3 +7,65 @@
         <li><a href="#">Новинки</a></li>
     </ul>
 </div>
+
+
+
+
+
+
+
+
+
+/* --- ВЫПАДАЮЩИЙ СПИСОК СОРТИРОВКИ --- */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-selected {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-selected span {
+    font-size: 10px; /* Маленькая стрелочка */
+}
+
+/* Сам скрытый список */
+.dropdown-list {
+    display: none; /* Прячем по умолчанию */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    margin: 5px 0 0 0;
+    list-style: none;
+    z-index: 100;
+    border: 1px solid #eee;
+}
+
+/* Показываем список при наведении на весь блок */
+.custom-dropdown:hover .dropdown-list {
+    display: block;
+}
+
+/* Стили для ссылок внутри списка */
+.dropdown-list li a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s;
+    font-size: 14px;
+}
+
+.dropdown-list li a:hover {
+    background-color: #f8f8f8;
+}
