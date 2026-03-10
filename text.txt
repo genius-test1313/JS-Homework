@@ -1,37 +1,28 @@
-/* --- ГЛОБАЛЬНАЯ ПОЧИНКА СЕТКИ КАТАЛОГА (ФИНАЛ) --- */
-
-/* 1. Делаем сетку товаров из 3-х колонок */
-.catalog-cards {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 24px !important;
-    align-items: start !important;
-    width: 100% !important;
-}
-
-/* 2. Заставляем правую часть каталога идти строго сверху вниз (колонкой) */
-.catalog-right {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* 3. Расталкиваем активные фильтры (налево) и сортировку (направо) */
+/* 1. Растягиваем заголовок с фильтрами и сортировкой на всю ширину */
 .catalog-right_heading {
+    grid-column: 1 / -1 !important; /* Занимает все колонки сетки */
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
 }
 
-.active-filters, .catalog-right-sort {
-    margin-bottom: 0 !important;
-    width: auto !important;
-}
-
-/* 4. Усмиряем вылезший текст SEO, отправляем его строго вниз */
-.catalog-rolex-info {
+/* 2. Центрируем пагинацию и тоже растягиваем на всю ширину */
+.catalog-cards-pagination {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    justify-content: center !important;
     width: 100% !important;
     margin-top: 40px !important;
-    order: 10; /* Железно отправляем его в самый конец правого блока */
+    margin-bottom: 40px !important;
+}
+
+/* 3. Отправляем текст про Rolex в самый низ на всю ширину */
+.catalog-rolex-info {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    border-top: 1px solid #eee; /* Небольшой разделитель для красоты */
+    padding-top: 20px;
 }
