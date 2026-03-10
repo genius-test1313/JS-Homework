@@ -1,25 +1,8 @@
-// Эффект переключения форм (Онлайн оценка)
-    $('input[name="eval_type"]').on('change', function() {
-        const type = $(this).val();
-        // Берем все поля, которые должны "мигать" при переключении
-        const $formContent = $('.evaluation__grid, .evaluation__textarea, .evaluation__photos, .evaluation__grid-bottom');
-        
-        // Плавно прячем форму (эффект переключения)
-        $formContent.animate({opacity: 0}, 200, function() {
-            
-            // Меняем подсказки в зависимости от выбора
-            if (type === 'watches') {
-                $('.evaluation__label').eq(0).find('input').attr('placeholder', 'Наприклад: Rolex');
-                $('.evaluation__label').eq(1).find('input').attr('placeholder', 'Якщо немає, обов\'язково фото з усіх боків');
-            } else if (type === 'jewelry') {
-                $('.evaluation__label').eq(0).find('input').attr('placeholder', 'Наприклад: Cartier або Tiffany');
-                $('.evaluation__label').eq(1).find('input').attr('placeholder', 'Тип виробу (каблучка, сережки тощо)');
-            } else if (type === 'diamonds') {
-                $('.evaluation__label').eq(0).find('input').attr('placeholder', 'Наявність сертифікату (GIA тощо)');
-                $('.evaluation__label').eq(1).find('input').attr('placeholder', 'Вага в каратах (якщо відомо)');
-            }
-            
-            // Плавно показываем форму обратно
-            $formContent.animate({opacity: 1}, 200);
-        });
-    });
+<ul class="heading__top">
+    <li class="heading__top-item">
+        <a href="index.html">Головна</a>
+    </li>
+    <li class="heading__top-item">
+        <span>Годинники</span>
+    </li>
+</ul>
