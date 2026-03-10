@@ -9,17 +9,3 @@
 
 
 
-
-
-
-// Слайдер для плашок товарів
-    const cardSwipers = new Swiper('.card-swiper', {
-        loop: true, // Безкінечне гортання
-        grabCursor: true, // Курсор "рука" при наведенні
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            bulletClass: 'card__img-span', // Беремо старі класи дизайнера
-            bulletActiveClass: 'card__img-span--active', // Старий активний клас
-        },
-    });
