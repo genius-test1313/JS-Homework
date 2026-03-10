@@ -1,13 +1,4 @@
-<div class="swiper card-swiper" style="width: 293px; padding-bottom: 25px; margin-bottom: 12px;">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <img src="assets/img/card_1.png" alt="card img" class="card__img" style="margin-bottom: 0;">
-        </div>
-        <div class="swiper-slide">
-            <img src="assets/img/card_2.png" alt="card img" class="card__img" style="margin-bottom: 0;">
-        </div>
-    </div>
-    <div class="swiper-pagination card__img-counter" style="position: absolute; bottom: 0;"></div>
+
 
 
 
