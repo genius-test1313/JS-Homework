@@ -1,0 +1,244 @@
+/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+:root {
+    --primary-blue: #4F98FF; /* Цвет на основе макета */
+    --dark-bg: #1B1D21; /* Цвет нижнего блока */
+    --text-grey: #ADADAD; /* Цвет подзаголовков в карточках, как на твоем скрине из фигмы */
+    --white: #FFFFFF;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #F0F5FF;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a { text-decoration: none; }
+
+/* ===== ОБОЛОЧКА И ФОН ===== */
+.page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    background: linear-gradient(180deg, #6FA6FF 0%, #4F89FF 100%); /* Градиент для верхней части, если картинка не перекроет */
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.1;
+}
+.logo img { height: 32px; filter: brightness(0) invert(1); } /* Делаем иконку белой */
+
+.nav { display: flex; gap: 40px; }
+.nav-link { color: rgba(255, 255, 255, 0.7); font-weight: 500; font-size: 15px; transition: color 0.3s; position: relative;}
+.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-link.active::after {
+    content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background: var(--white); border-radius: 2px;
+}
+
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.login-btn { display: flex; align-items: center; gap: 8px; color: var(--white); font-weight: 500; font-size: 15px;}
+.login-btn img { width: 18px; height: 18px; filter: brightness(0) invert(1); }
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-family: var(--font-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-outline:hover { background: var(--white); color: var(--primary-blue); }
+
+/* ===== HERO ТЕКСТ ===== */
+.hero-text {
+    text-align: center;
+    color: var(--white);
+    padding-top: 140px;
+    position: relative;
+    z-index: 2;
+}
+.hero-text h1 { font-size: 56px; font-weight: 600; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px;}
+.hero-text p { font-size: 16px; font-weight: 400; opacity: 0.9; line-height: 1.6; }
+
+/* ===== БЛОК ПОИСКА (НАЕЗЖАЕТ НА КАРТИНКУ) ===== */
+.search-widget {
+    max-width: 800px;
+    margin: 40px auto -40px; /* Отрицательный margin тянет блок вниз на картинку */
+    position: relative;
+    z-index: 5; /* Чтобы был поверх картинки */
+}
+
+.search-tabs { display: flex; }
+.tab {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 12px 32px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.tab.active { background: var(--white); color: #111; }
+
+.search-form {
+    background: var(--white);
+    padding: 12px 12px 12px 24px;
+    border-radius: 0 16px 16px 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.input-group { display: flex; align-items: center; gap: 8px; }
+.input-group.full-width { flex: 1; }
+.icon { opacity: 0.5; font-size: 18px;}
+.search-form select, .search-form input {
+    border: none; outline: none; font-family: var(--font-main); font-size: 15px; color: #333; width: 100%;
+}
+.search-form select { cursor: pointer; padding-right: 20px;}
+.divider { width: 1px; height: 24px; background: #E5E5E5; margin: 0 24px; }
+
+.btn-dark {
+    background: #0B0B0B;
+    color: var(--white);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-dark:hover { background: #333; }
+
+/* ===== КАРТИНКА ЗДАНИЯ ===== */
+.hero-image {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* ===== ТЕМНЫЙ БЛОК СНИЗУ ===== */
+.popular-section {
+    background-color: var(--dark-bg);
+    border-radius: 40px 0 0 0; /* Округление только левого верхнего угла, как в макете */
+    padding: 50px 60px 60px 60px;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px; /* Наезжаем на картинку здания снизу! */
+}
+
+.popular-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.popular-header h2 { color: var(--white); font-size: 24px; font-weight: 500; }
+
+/* Кнопки стрелочек (Custom Swiper Nav) */
+.carousel-nav { display: flex; gap: 12px; }
+.carousel-nav button {
+    background: transparent;
+    border: none;
+    width: 40px; height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.carousel-nav button:hover { transform: scale(1.1); }
+.carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5;}
+.carousel-nav button:hover img { opacity: 1; }
+
+/* ===== КАРТОЧКИ (SWIPER) ===== */
+.swiper { width: 100%; overflow: hidden;}
+.swiper-slide {
+    width: 186px; /* Фиксированная ширина карточки как в Figma (см скриншот image_6cd0f6.jpg) */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 186px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card-info h4 {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    color: var(--text-grey); /* Цвет ADADAD из макета */
+    font-size: 13px;
+}
