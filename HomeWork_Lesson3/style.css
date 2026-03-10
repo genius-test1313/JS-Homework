@@ -1,8 +1,8 @@
 /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
 :root {
-    --primary-blue: #4F98FF; /* Цвет на основе макета */
-    --dark-bg: #1B1D21; /* Цвет нижнего блока */
-    --text-grey: #ADADAD; /* Цвет подзаголовков в карточках, как на твоем скрине из фигмы */
+    --primary-blue: #4F98FF; 
+    --dark-bg: #1B1D21; 
+    --text-grey: #ADADAD; 
     --white: #FFFFFF;
     --font-main: 'Inter', sans-serif;
 }
@@ -39,7 +39,7 @@ a { text-decoration: none; }
 .main-container {
     width: 100%;
     max-width: 1440px;
-    background: linear-gradient(180deg, #6FA6FF 0%, #4F89FF 100%); /* Градиент для верхней части, если картинка не перекроет */
+    background: linear-gradient(180deg, #6FA6FF 0%, #4F89FF 100%); 
     border-radius: 40px;
     overflow: hidden;
     position: relative;
@@ -68,7 +68,7 @@ a { text-decoration: none; }
     font-size: 18px;
     line-height: 1.1;
 }
-.logo img { height: 32px; filter: brightness(0) invert(1); } /* Делаем иконку белой */
+.logo img { height: 32px; } /* Убрали фильтр, теперь цвета оригинальные */
 
 .nav { display: flex; gap: 40px; }
 .nav-link { color: rgba(255, 255, 255, 0.7); font-weight: 500; font-size: 15px; transition: color 0.3s; position: relative;}
@@ -105,12 +105,12 @@ a { text-decoration: none; }
 .hero-text h1 { font-size: 56px; font-weight: 600; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px;}
 .hero-text p { font-size: 16px; font-weight: 400; opacity: 0.9; line-height: 1.6; }
 
-/* ===== БЛОК ПОИСКА (НАЕЗЖАЕТ НА КАРТИНКУ) ===== */
+/* ===== БЛОК ПОИСКА ===== */
 .search-widget {
     max-width: 800px;
-    margin: 40px auto -40px; /* Отрицательный margin тянет блок вниз на картинку */
+    margin: 40px auto -40px; 
     position: relative;
-    z-index: 5; /* Чтобы был поверх картинки */
+    z-index: 5; 
 }
 
 .search-tabs { display: flex; }
@@ -140,7 +140,8 @@ a { text-decoration: none; }
 
 .input-group { display: flex; align-items: center; gap: 8px; }
 .input-group.full-width { flex: 1; }
-.icon { opacity: 0.5; font-size: 18px;}
+.search-icon { width: 22px; opacity: 0.6; } /* Настройки для иконки домика */
+.text-icon { opacity: 0.5; font-size: 18px; }
 .search-form select, .search-form input {
     border: none; outline: none; font-family: var(--font-main); font-size: 15px; color: #333; width: 100%;
 }
@@ -160,7 +161,7 @@ a { text-decoration: none; }
 }
 .btn-dark:hover { background: #333; }
 
-/* ===== КАРТИНКА ЗДАНИЯ ===== */
+/* ===== ГЛАВНАЯ ФОТКА ЗДАНИЯ ===== */
 .hero-image {
     width: 100%;
     height: 400px;
@@ -177,11 +178,11 @@ a { text-decoration: none; }
 /* ===== ТЕМНЫЙ БЛОК СНИЗУ ===== */
 .popular-section {
     background-color: var(--dark-bg);
-    border-radius: 40px 0 0 0; /* Округление только левого верхнего угла, как в макете */
+    border-radius: 40px 0 0 0; 
     padding: 50px 60px 60px 60px;
     position: relative;
     z-index: 10;
-    margin-top: -60px; /* Наезжаем на картинку здания снизу! */
+    margin-top: -60px; 
 }
 
 .popular-header {
@@ -192,7 +193,6 @@ a { text-decoration: none; }
 }
 .popular-header h2 { color: var(--white); font-size: 24px; font-weight: 500; }
 
-/* Кнопки стрелочек (Custom Swiper Nav) */
 .carousel-nav { display: flex; gap: 12px; }
 .carousel-nav button {
     background: transparent;
@@ -206,11 +206,9 @@ a { text-decoration: none; }
 .carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5;}
 .carousel-nav button:hover img { opacity: 1; }
 
-/* ===== КАРТОЧКИ (SWIPER) ===== */
+/* ===== КАРТОЧКИ СЛАЙДЕРА ===== */
 .swiper { width: 100%; overflow: hidden;}
-.swiper-slide {
-    width: 186px; /* Фиксированная ширина карточки как в Figma (см скриншот image_6cd0f6.jpg) */
-}
+.swiper-slide { width: 186px; }
 
 .card {
     display: flex;
@@ -239,6 +237,6 @@ a { text-decoration: none; }
 }
 
 .card-info p {
-    color: var(--text-grey); /* Цвет ADADAD из макета */
+    color: var(--text-grey); 
     font-size: 13px;
 }
