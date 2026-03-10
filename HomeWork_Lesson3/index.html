@@ -2,11 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeWork3</title>
+    <title>Homes Arrow | Real Estate</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="./js/script.js" ></script>
+
+    <div class="page-wrapper" style="background-image: url('assets/images/rectangle.jpg');">
+        
+        <main class="main-container">
+            
+            <header class="header">
+                <a href="#" class="logo">
+                    <img src="assets/icons/logo.svg" alt="Homes Arrow Logo">
+                    <span>Homes<br>Arrow</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="#" class="nav-link active">Properties</a>
+                    <a href="#" class="nav-link">Blog</a>
+                    <a href="#" class="nav-link">Pages</a>
+                    <a href="#" class="nav-link">Agents</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="login-btn">
+                        <img src="assets/icons/user.svg" alt="User"> Log In
+                    </a>
+                    <button class="btn-outline">Submit Listing ↗</button>
+                </div>
+            </header>
+
+            <section class="hero-text">
+                <h1>Find Real Estate and Get Your<br>Dream Space</h1>
+                <p>We are a real estate agency that will help you find the best residence you dream of, let's<br>discuss for your dream house?</p>
+            </section>
+
+            <div class="search-widget">
+                <div class="search-tabs">
+                    <button class="tab active" onclick="switchTab(this)">Sell</button>
+                    <button class="tab" onclick="switchTab(this)">Rent</button>
+                </div>
+                <div class="search-form">
+                    <div class="input-group">
+                        <span class="icon">🏠</span>
+                        <select>
+                            <option>Property type</option>
+                            <option>Apartment</option>
+                            <option>Villa</option>
+                        </select>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="input-group full-width">
+                        <span class="icon">🔍</span>
+                        <input type="text" placeholder="Search by location or Property ID...">
+                    </div>
+                    <button class="btn-dark">Search</button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="assets/images/foto-1.jpg" alt="Modern Building">
+            </div>
+
+            <section class="popular-section">
+                <div class="popular-header">
+                    <h2>Popular Residence</h2>
+                    <div class="carousel-nav">
+                        <button class="swiper-button-prev-custom"><img src="assets/icons/arrow-square-left.svg" alt="Prev"></button>
+                        <button class="swiper-button-next-custom"><img src="assets/icons/arrow-right-1.svg" alt="Next"></button>
+                    </div>
+                </div>
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-2.jpg" alt="SkyScrapper Flats">
+                            <div class="card-info">
+                                <h4>SkyScrapper Flats</h4>
+                                <p>Manhattan</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-3.jpg" alt="Storey Flats">
+                            <div class="card-info">
+                                <h4>Storey Flats</h4>
+                                <p>Queens</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-4.jpg" alt="Villas">
+                            <div class="card-info">
+                                <h4>Villas</h4>
+                                <p>Brooklyn</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-5.jpg" alt="Royal Villas">
+                            <div class="card-info">
+                                <h4>Royal Villas</h4>
+                                <p>Staten Island</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-6.jpg" alt="Victorian">
+                            <div class="card-info">
+                                <h4>Victorian</h4>
+                                <p>Bronx Island</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide card">
+                            <img src="assets/images/foto-7.jpg" alt="Tropical Tower">
+                            <div class="card-info">
+                                <h4>Tropical Tower</h4>
+                                <p>Queens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Переключение табов Sell / Rent
+        function switchTab(element) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Запуск карусели
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto", // Карточки занимают свою ширину
+            spaceBetween: 24, // Отступ между карточками
+            loop: true, // Бесконечная прокрутка по кругу
+            navigation: {
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+            },
+        });
+    </script>
 </body>
 </html>
