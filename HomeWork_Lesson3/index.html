@@ -52,7 +52,7 @@
                 </div>
                 <div class="search-form">
                     <div class="input-group">
-                        <span class="icon">🏠</span>
+                        <img src="assets/icons/home-2.svg" alt="Home" class="search-icon">
                         <select>
                             <option>Property type</option>
                             <option>Apartment</option>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="divider"></div>
                     <div class="input-group full-width">
-                        <span class="icon">🔍</span>
+                        <span class="text-icon">🔍</span>
                         <input type="text" placeholder="Search by location or Property ID...">
                     </div>
                     <button class="btn-dark">Search</button>
@@ -76,7 +76,7 @@
                 <div class="popular-header">
                     <h2>Popular Residence</h2>
                     <div class="carousel-nav">
-                        <button class="swiper-button-prev-custom"><img src="assets/icons/arrow-square-left.svg" alt="Prev"></button>
+                        <button class="swiper-button-prev-custom"><img src="assets/icons/arrow-square.svg" alt="Prev"></button>
                         <button class="swiper-button-next-custom"><img src="assets/icons/arrow-right-1.svg" alt="Next"></button>
                     </div>
                 </div>
@@ -132,7 +132,6 @@
         </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>
@@ -142,15 +141,17 @@
             element.classList.add('active');
         }
 
-        // Запуск карусели
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: "auto", // Карточки занимают свою ширину
-            spaceBetween: 24, // Отступ между карточками
-            loop: true, // Бесконечная прокрутка по кругу
-            navigation: {
-                nextEl: ".swiper-button-next-custom",
-                prevEl: ".swiper-button-prev-custom",
-            },
+        // Запуск карусели (когда страница полностью загрузилась)
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: "auto", 
+                spaceBetween: 24, 
+                loop: true, 
+                navigation: {
+                    nextEl: ".swiper-button-next-custom",
+                    prevEl: ".swiper-button-prev-custom",
+                },
+            });
         });
     </script>
 </body>
