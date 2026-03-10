@@ -1,25 +1,37 @@
-/* --- ГЛОБАЛЬНАЯ ПОЧИНКА СЕТКИ КАТАЛОГА --- */
+/* --- ГЛОБАЛЬНАЯ ПОЧИНКА СЕТКИ КАТАЛОГА (ФИНАЛ) --- */
 
-/* 1. Делаем сетку товаров из 3-х колонок (вместо одного кривого столба) */
+/* 1. Делаем сетку товаров из 3-х колонок */
 .catalog-cards {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 24px !important;
     align-items: start !important;
+    width: 100% !important;
 }
 
-/* 2. Расталкиваем активные фильтры и сортировку по краям */
-.active-filters {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+/* 2. Заставляем правую часть каталога идти строго сверху вниз (колонкой) */
+.catalog-right {
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-/* 3. Делаем так, чтобы кнопка сортировки красиво стояла справа над товарами */
-.catalog-right-sort {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    width: 100%;
+/* 3. Расталкиваем активные фильтры (налево) и сортировку (направо) */
+.catalog-right_heading {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+}
+
+.active-filters, .catalog-right-sort {
+    margin-bottom: 0 !important;
+    width: auto !important;
+}
+
+/* 4. Усмиряем вылезший текст SEO, отправляем его строго вниз */
+.catalog-rolex-info {
+    width: 100% !important;
+    margin-top: 40px !important;
+    order: 10; /* Железно отправляем его в самый конец правого блока */
 }
