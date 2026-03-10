@@ -6,3 +6,19 @@
         <span>Годинники</span>
     </li>
 </ul>
+
+
+
+
+
+<ul class="heading__top">
+    <li class="heading__top-item">
+        <a href="index.html">Головна</a>
+    </li>
+    <li class="heading__top-item">
+        <a href="blog.html">Блог</a>
+    </li>
+    <li class="heading__top-item">
+        <span>Золотий браслет - правила та нюанси вибору</span>
+    </li>
+</ul>
