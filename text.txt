@@ -69,3 +69,10 @@
 .dropdown-list li a:hover {
     background-color: #f8f8f8;
 }
+
+
+
+
+<div class="catalog-right-sort">
+    Sort by
+</div>
