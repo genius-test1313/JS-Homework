@@ -1,4 +1,3 @@
-/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
 :root {
     --primary-blue: #4F98FF; 
     --dark-bg: #1B1D21; 
@@ -24,7 +23,6 @@ body {
 
 a { text-decoration: none; }
 
-/* ===== ОБОЛОЧКА И ФОН ===== */
 .page-wrapper {
     width: 100%;
     min-height: 100vh;
@@ -39,24 +37,41 @@ a { text-decoration: none; }
 .main-container {
     width: 100%;
     max-width: 1440px;
-    background: linear-gradient(180deg, #6FA6FF 0%, #4F89FF 100%); 
+    background-color: var(--dark-bg);
     border-radius: 40px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-/* ===== ШАПКА ===== */
+/* ===== ФОН ЗДАНИЯ С НЕБОМ ===== */
+.hero-bg {
+    width: 100%;
+    background-size: cover;
+    background-position: center bottom; /* Прижимаем крышу здания к низу блока */
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 80px; /* Отступ снизу, чтобы поместился поиск */
+}
+
+/* ===== ШАПКА И ЛИНИЯ ===== */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 60px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+    padding: 40px 60px 0 60px;
+}
+
+/* Вот та самая белая линия-разделитель из макета! */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25); 
 }
 
 .logo {
@@ -68,7 +83,7 @@ a { text-decoration: none; }
     font-size: 18px;
     line-height: 1.1;
 }
-.logo img { height: 32px; } /* Убрали фильтр, теперь цвета оригинальные */
+.logo img { height: 32px; }
 
 .nav { display: flex; gap: 40px; }
 .nav-link { color: rgba(255, 255, 255, 0.7); font-weight: 500; font-size: 15px; transition: color 0.3s; position: relative;}
@@ -94,21 +109,21 @@ a { text-decoration: none; }
 }
 .btn-outline:hover { background: var(--white); color: var(--primary-blue); }
 
-/* ===== HERO ТЕКСТ ===== */
+/* ===== ТЕКСТ НА НЕБЕ ===== */
 .hero-text {
     text-align: center;
     color: var(--white);
-    padding-top: 140px;
+    padding-top: 180px;
     position: relative;
     z-index: 2;
 }
 .hero-text h1 { font-size: 56px; font-weight: 600; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px;}
 .hero-text p { font-size: 16px; font-weight: 400; opacity: 0.9; line-height: 1.6; }
 
-/* ===== БЛОК ПОИСКА ===== */
+/* ===== ПОИСК НА КРЫШЕ ===== */
 .search-widget {
     max-width: 800px;
-    margin: 40px auto -40px; 
+    margin: 40px auto 0; 
     position: relative;
     z-index: 5; 
 }
@@ -140,8 +155,8 @@ a { text-decoration: none; }
 
 .input-group { display: flex; align-items: center; gap: 8px; }
 .input-group.full-width { flex: 1; }
-.search-icon { width: 22px; opacity: 0.6; } /* Настройки для иконки домика */
-.text-icon { opacity: 0.5; font-size: 18px; }
+.search-icon { width: 20px; opacity: 0.6; } /* Класс для обеих иконок в поиске */
+
 .search-form select, .search-form input {
     border: none; outline: none; font-family: var(--font-main); font-size: 15px; color: #333; width: 100%;
 }
@@ -161,28 +176,14 @@ a { text-decoration: none; }
 }
 .btn-dark:hover { background: #333; }
 
-/* ===== ГЛАВНАЯ ФОТКА ЗДАНИЯ ===== */
-.hero-image {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    z-index: 1;
-}
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
-
-/* ===== ТЕМНЫЙ БЛОК СНИЗУ ===== */
+/* ===== ТЕМНЫЙ БЛОК ВНИЗУ ===== */
 .popular-section {
     background-color: var(--dark-bg);
     border-radius: 40px 0 0 0; 
-    padding: 50px 60px 60px 60px;
+    padding: 60px;
     position: relative;
     z-index: 10;
-    margin-top: -60px; 
+    margin-top: -40px; /* Блок наезжает на секцию со зданием снизу */
 }
 
 .popular-header {
@@ -206,7 +207,7 @@ a { text-decoration: none; }
 .carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5;}
 .carousel-nav button:hover img { opacity: 1; }
 
-/* ===== КАРТОЧКИ СЛАЙДЕРА ===== */
+/* ===== СЛАЙДЕР ===== */
 .swiper { width: 100%; overflow: hidden;}
 .swiper-slide { width: 186px; }
 
