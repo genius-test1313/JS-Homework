@@ -39,25 +39,22 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
     const heroSwiper = new Swiper('.hero-swiper', {
-        loop: true, // Безкінечне гортання
+        loop: true, // Бесконечная прокрутка
         navigation: {
-            nextEl: '.swiper-button-next', // Підключили стрілку
+            nextEl: '.swiper-button-next', // Подключили стрелку
         },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            bulletClass: 'hero__bottom-right-dot', // Використовуємо дизайн клієнта
-            bulletActiveClass: 'hero__bottom-right-dot--active', // Активна точка клієнта
+            bulletClass: 'hero__bottom-right-dot', // Класс неактивной точки
+            bulletActiveClass: 'hero__bottom-right-dot--active', // Класс активной точки
         },
         on: {
             slideChange: function () {
-                // Оновлення цифри лічильника
-                const currentNum = document.querySelector('.swiper-current-num');
-                if (currentNum) {
-                    currentNum.textContent = this.realIndex + 1;
-                }
+                // Обновляем цифру счетчика при перелистывании
+                $('.swiper-current-num').text(this.realIndex + 1);
             }
         }
     });
