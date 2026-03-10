@@ -15,7 +15,6 @@
 <body>
 
     <div class="page-wrapper" style="background-image: url('assets/images/rectangle.jpg');">
-        
         <main class="main-container">
             
             <div class="hero-bg" style="background-image: url('assets/images/foto-1.jpg');">
@@ -43,12 +42,12 @@
                     </div>
                 </header>
 
-                <section class="hero-text">
+                <section class="hero-text fade-up-1">
                     <h1>Find Real Estate and Get Your<br>Dream Space</h1>
                     <p>We are a real estate agency that will help you find the best residence you dream of, let's<br>discuss for your dream house?</p>
                 </section>
 
-                <div class="search-widget">
+                <div class="search-widget fade-up-2">
                     <div class="search-tabs">
                         <button class="tab active" onclick="switchTab(this)">Sell</button>
                         <button class="tab" onclick="switchTab(this)">Rent</button>
@@ -70,7 +69,9 @@
                         <button class="btn-dark">Search</button>
                     </div>
                 </div>
-            </div> <section class="popular-section">
+            </div>
+
+            <section class="popular-section fade-up-3">
                 <div class="popular-header">
                     <h2>Popular Residence</h2>
                     <div class="carousel-nav">
@@ -82,42 +83,54 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-2.jpg" alt="SkyScrapper Flats">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-2.jpg" alt="SkyScrapper Flats">
+                            </div>
                             <div class="card-info">
                                 <h4>SkyScrapper Flats</h4>
                                 <p>Manhattan</p>
                             </div>
                         </div>
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-3.jpg" alt="Storey Flats">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-3.jpg" alt="Storey Flats">
+                            </div>
                             <div class="card-info">
                                 <h4>Storey Flats</h4>
                                 <p>Queens</p>
                             </div>
                         </div>
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-4.jpg" alt="Villas">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-4.jpg" alt="Villas">
+                            </div>
                             <div class="card-info">
                                 <h4>Villas</h4>
                                 <p>Brooklyn</p>
                             </div>
                         </div>
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-5.jpg" alt="Royal Villas">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-5.jpg" alt="Royal Villas">
+                            </div>
                             <div class="card-info">
                                 <h4>Royal Villas</h4>
                                 <p>Staten Island</p>
                             </div>
                         </div>
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-6.jpg" alt="Victorian">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-6.jpg" alt="Victorian">
+                            </div>
                             <div class="card-info">
                                 <h4>Victorian</h4>
                                 <p>Bronx Island</p>
                             </div>
                         </div>
                         <div class="swiper-slide card">
-                            <img src="assets/images/foto-7.jpg" alt="Tropical Tower">
+                            <div class="img-wrapper">
+                                <img src="assets/images/foto-7.jpg" alt="Tropical Tower">
+                            </div>
                             <div class="card-info">
                                 <h4>Tropical Tower</h4>
                                 <p>Queens</p>
@@ -142,6 +155,7 @@
                 slidesPerView: "auto", 
                 spaceBetween: 24, 
                 loop: true, 
+                grabCursor: true, /* Появится рука для свайпа мышкой */
                 navigation: {
                     nextEl: ".swiper-button-next-custom",
                     prevEl: ".swiper-button-prev-custom",
