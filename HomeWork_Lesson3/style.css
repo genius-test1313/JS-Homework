@@ -44,18 +44,16 @@ a { text-decoration: none; }
     box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-/* ===== ФОН ЗДАНИЯ С НЕБОМ ===== */
 .hero-bg {
     width: 100%;
     background-size: cover;
-    background-position: center bottom; /* Прижимаем крышу здания к низу блока */
+    background-position: center bottom;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    padding-bottom: 80px; /* Отступ снизу, чтобы поместился поиск */
+    padding-bottom: 80px; 
 }
 
-/* ===== ШАПКА И ЛИНИЯ ===== */
 .header {
     position: absolute;
     top: 0;
@@ -65,7 +63,6 @@ a { text-decoration: none; }
     padding: 40px 60px 0 60px;
 }
 
-/* Вот та самая белая линия-разделитель из макета! */
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -109,7 +106,6 @@ a { text-decoration: none; }
 }
 .btn-outline:hover { background: var(--white); color: var(--primary-blue); }
 
-/* ===== ТЕКСТ НА НЕБЕ ===== */
 .hero-text {
     text-align: center;
     color: var(--white);
@@ -120,7 +116,6 @@ a { text-decoration: none; }
 .hero-text h1 { font-size: 56px; font-weight: 600; line-height: 1.2; margin-bottom: 24px; letter-spacing: -1px;}
 .hero-text p { font-size: 16px; font-weight: 400; opacity: 0.9; line-height: 1.6; }
 
-/* ===== ПОИСК НА КРЫШЕ ===== */
 .search-widget {
     max-width: 800px;
     margin: 40px auto 0; 
@@ -155,7 +150,7 @@ a { text-decoration: none; }
 
 .input-group { display: flex; align-items: center; gap: 8px; }
 .input-group.full-width { flex: 1; }
-.search-icon { width: 20px; opacity: 0.6; } /* Класс для обеих иконок в поиске */
+.search-icon { width: 20px; opacity: 0.6; }
 
 .search-form select, .search-form input {
     border: none; outline: none; font-family: var(--font-main); font-size: 15px; color: #333; width: 100%;
@@ -176,14 +171,13 @@ a { text-decoration: none; }
 }
 .btn-dark:hover { background: #333; }
 
-/* ===== ТЕМНЫЙ БЛОК ВНИЗУ ===== */
 .popular-section {
     background-color: var(--dark-bg);
     border-radius: 40px 0 0 0; 
     padding: 60px;
     position: relative;
     z-index: 10;
-    margin-top: -40px; /* Блок наезжает на секцию со зданием снизу */
+    margin-top: -40px; 
 }
 
 .popular-header {
@@ -204,10 +198,9 @@ a { text-decoration: none; }
     display: flex; align-items: center; justify-content: center;
 }
 .carousel-nav button:hover { transform: scale(1.1); }
-.carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5;}
+.carousel-nav button img { filter: brightness(0) invert(1); width: 24px; opacity: 0.5; transition: opacity 0.3s;}
 .carousel-nav button:hover img { opacity: 1; }
 
-/* ===== СЛАЙДЕР ===== */
 .swiper { width: 100%; overflow: hidden;}
 .swiper-slide { width: 186px; }
 
@@ -218,16 +211,27 @@ a { text-decoration: none; }
     cursor: pointer;
 }
 
-.card img {
+/* Оболочка для картинки, чтобы при зуме она не вылезала за края */
+.img-wrapper {
     width: 100%;
     height: 186px;
-    object-fit: cover;
     border-radius: 16px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden; /* Скрывает всё, что выходит за рамки */
 }
-.card:hover img {
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Плавный зум */
+}
+
+/* Эффект наведения на карточку: зум картинки и небольшое поднятие всей карточки */
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.card:hover .img-wrapper img {
+    transform: scale(1.08); /* Картинка увеличивается внутри */
 }
 
 .card-info h4 {
@@ -240,4 +244,26 @@ a { text-decoration: none; }
 .card-info p {
     color: var(--text-grey); 
     font-size: 13px;
+}
+
+/* ===== АНИМАЦИИ ПОЯВЛЕНИЯ ===== */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Классы, которые мы добавили в HTML */
+.fade-up-1 {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.fade-up-2 {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards; /* Задержка 0.2 сек */
+}
+
+.fade-up-3 {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards; /* Задержка 0.4 сек */
 }
