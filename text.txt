@@ -45,3 +45,9 @@ https://docs.google.com/document/d/1FL073TUrGzvmefN1kT2p6JECSsCT9AhP4eNAkehoW3k/
 Страница статьи
 Блок “Похожие статьи” в макете отображен каруселью со слайдером
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
