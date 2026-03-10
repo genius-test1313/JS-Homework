@@ -1,18 +1,9 @@
-/* --- ГЛОБАЛЬНЫЕ ХОВЕРЫ ДЛЯ ССЫЛОК И КНОПОК --- */
-
-/* 1. Даем всем ссылкам и кнопкам плавный переход */
-a, button, input[type="submit"], .btn {
-    transition: all 0.3s ease-in-out !important;
-}
-
-/* 2. Эффект наведения для ссылок (мягко бледнеют) */
-a:hover {
-    opacity: 0.65;
-}
-
-/* 3. Эффект наведения для кнопок (приподнимаются и дают тень) */
-button:hover, input[type="submit"]:hover, .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-}
+<div class="catalog-right-sort custom-dropdown">
+    <div class="dropdown-selected">Сортування <span>▼</span></div>
+    <ul class="dropdown-list">
+        <li><a href="#">За замовчуванням</a></li>
+        <li><a href="#">Від дешевих до дорогих</a></li>
+        <li><a href="#">Від дорогих до дешевих</a></li>
+        <li><a href="#">Новинки</a></li>
+    </ul>
+</div>
