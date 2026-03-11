@@ -1,44 +1,21 @@
-/* --- ПУНКТ 9: Идеальные отступы по макету Figma (ПК) --- */
-@media screen and (min-width: 769px) {
-    .brands {
-        padding-bottom: 120px !important; /* Внутренний отступ блока */
-        margin-bottom: 100px !important;  /* Внешний отступ до следующего блока */
-    }
+/* --- МОБИЛЬНАЯ ВЕРСИЯ: Глобальная починка ширины (до 420px) --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Жестко убиваем горизонтальный скролл на всем сайте */
 }
 
-
-
-
-
-https://docs.google.com/document/d/1cNCs9fngOFwqjm-op2GtpNYfHQ0Vz79yyBMNN8MAcsM/edit?usp=sharing
-
-
-
-/* --- ПУНКТ 10: Переключение стран на странице Контактов --- */
-$(document).ready(function() {
-    // Находим радиокнопки стран именно в блоке контактов
-    const countryRadios = $('.contact-country input[type="radio"]');
+@media screen and (max-width: 420px) {
+    /* Запрещаем любым картинкам разрывать экран */
+    img, video, iframe {
+        max-width: 100% !important;
+        height: auto;
+    }
     
-    // Находим блок с адресами и его заголовок
-    const addressesBlock = $('.contact-places');
-    const addressesTitle = $('.contact-places-title');
-
-    // Слушаем клики по кнопкам
-    countryRadios.on('change', function() {
-        const selectedCountry = $(this).val();
-
-        if (selectedCountry === 'watches') { 
-            // Это кнопка "Украина" (value='watches' осталось от старого верстальщика)
-            addressesBlock.fadeIn(300); // Показываем города
-            addressesTitle.text('Наші адреси:');
-        } else if (selectedCountry === 'jewelry') {
-            // Это кнопка "Германия"
-            addressesBlock.fadeOut(300); // Прячем города
-            addressesTitle.text('Адреси в Німеччині знаходяться на стадії відкриття');
-        } else if (selectedCountry === 'diamonds') {
-            // Это кнопка "Польша"
-            addressesBlock.fadeOut(300); // Прячем города
-            addressesTitle.text('Адреси в Польщі знаходяться на стадії відкриття');
-        }
-    });
-});
+    /* Убеждаемся, что контейнер не прилипает к краям на узких телефонах */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
