@@ -1,46 +1,17 @@
-/* === ПУНКТ 2б: ЯДЕРНЫЙ ПРЕСС для высоты меню (до 700px) === */
-@media screen and (max-height: 700px) {
-    
-    /* 1. Убиваем флекс-дыры (gap) в главных контейнерах меню */
-    .header__top-mobile, 
-    .header__bottom,
-    .mobile-header-bottom {
-        gap: 0 !important; 
-        justify-content: flex-start !important; /* Запрещаем расталкивать элементы */
+/* === ПУНКТ 3: Картинки "Про нас" СТРОГО ПО МАКЕТУ (392x400) === */
+@media screen and (max-width: 767px) {
+    .about-image-wrapper {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 20px; /* Отступ между блоками как в Figma */
     }
 
-    /* 2. Жестко режем высоту 4-х кнопок с иконками (Продаж...) */
-    .header__bottom-item {
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-        margin-bottom: 0 !important;
-        min-height: 35px !important; /* Делаем их компактнее */
-    }
-    
-    /* Чуть уменьшаем сами иконки часов/колец, чтобы сэкономить место */
-    .header__bottom-item-icon {
-        max-width: 18px !important;
-        margin-bottom: 5px !important;
-    }
-
-    /* 3. Сжимаем аккордеон (Каталог, Інформація, Контакти) */
-    .mobile-header-menu-item, 
-    .accordion-toggle {
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
-        margin: 0 !important;
-    }
-
-    /* 4. Подтягиваем самый низ (соцсети и телефон) */
-    .mobile-header-bottom {
-        margin-top: 5px !important;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-    }
-    
-    /* 5. Уменьшаем шапку с языками */
-    .header__top-geo-mobile {
-        padding-bottom: 5px !important;
-        margin-bottom: 5px !important;
+    .about-image-wrapper img {
+        width: 100% !important;
+        /* Высчитываем точное соотношение сторон из макета (400 / 392) */
+        aspect-ratio: 392 / 400 !important; 
+        object-fit: cover !important; /* Чтобы картинка не сжималась, а красиво заполняла блок */
+        display: block;
+        border-radius: 0px; /* Судя по макету, углы острые */
     }
 }
