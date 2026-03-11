@@ -1,6 +1,5 @@
-/* === ПУНКТ 4.1: Рятуємо сітку каталогу та сортування === */
+/* === ПУНКТ 4.1: Фінальне вирівнювання каталогу та сортування === */
 @media screen and (max-width: 991px) {
-    /* 1. Вбиваємо порожнє місце зліва */
     .catalog_inner {
         display: block !important;
         width: 100% !important;
@@ -13,33 +12,29 @@
         max-width: 100% !important;
         margin: 0 !important;
         padding: 0 15px !important;
-        float: none !important; /* Відключаємо старі флоати, якщо вони є */
+        float: none !important;
     }
 
-    /* 2. Робимо красивою шапку з тегами і сортуванням */
     .catalog-right_heading {
         display: flex !important;
-        flex-direction: column !important; /* Ставимо їх один під одним */
+        flex-direction: column !important;
         align-items: flex-start !important;
         gap: 15px !important;
         margin-bottom: 25px !important;
         width: 100% !important;
     }
 
-    /* Активні фільтри (напр. "Чоловічі х") */
     .active-filters {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 10px !important;
     }
 
-    /* Випадашка сортування */
     .catalog-right-sort {
         margin: 0 !important;
         width: 100% !important;
     }
 
-    /* 3. Вирівнюємо самі товари */
     .cards.catalog-cards {
         display: flex !important;
         flex-direction: column !important;
