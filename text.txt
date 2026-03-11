@@ -83,3 +83,54 @@
         </div> <div class="swiper-pagination"></div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+js
+
+
+
+// Налаштування слайдера "Варте уваги"
+new Swiper('.similar-slider', {
+    slidesPerView: 1.2, // Показуємо частину наступної картки на мобільних
+    spaceBetween: 20,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        // Коли екран стає великим (десктоп)
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        }
+    }
+});
+
+
+
+
+
+css
+
+
+
+
+
+
+.similar-slider {
+    padding-bottom: 40px !important;
+    overflow: hidden !important;
+}
+
+.similar-slider .swiper-slide {
+    height: auto !important;
+}
