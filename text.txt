@@ -1,21 +1,6 @@
-/* --- 1. НАША СОРТИРОВКА (ВЫПАДАЮЩИЙ СПИСОК) --- */
-.custom-dropdown { position: relative; display: inline-block; cursor: pointer; }
-.dropdown-selected { font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
-.dropdown-selected span { font-size: 10px; }
-.dropdown-list { display: none; position: absolute; right: 0; top: 100%; background-color: #fff; min-width: 200px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); padding: 10px 0; margin: 5px 0 0 0; list-style: none; z-index: 100; border: 1px solid #eee; }
-.custom-dropdown:hover .dropdown-list { display: block; }
-.dropdown-list li a { color: #333; padding: 8px 16px; text-decoration: none; display: block; transition: background 0.2s; font-size: 14px; }
-.dropdown-list li a:hover { background-color: #f8f8f8; }
-
-/* --- 2. БЕЗОПАСНАЯ ПОЧИНКА СЕТКИ И ТЕКСТА --- */
-/* Ставим товары в 3 колонки */
-.catalog-cards { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; width: 100% !important; }
-
-/* Заставляем правую колонку идти строго сверху вниз */
-.catalog-right { display: flex !important; flex-direction: column !important; width: 100% !important; }
-
-/* Расталкиваем фильтр налево, а нашу сортировку направо */
-.catalog-right_heading { display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; margin-bottom: 24px !important; }
-
-/* Принудительно отправляем текст про Rolex в самый низ */
-.catalog-rolex-info { order: 10 !important; width: 100% !important; margin-top: 40px !important; border-top: 1px solid #eee !important; padding-top: 20px !important; }
+/* --- ПУНКТ 9: Отступ между брендами и Скупкой (только ПК) --- */
+@media screen and (min-width: 769px) {
+    .brands {
+        margin-bottom: 120px !important;
+    }
+}
