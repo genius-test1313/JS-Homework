@@ -1,61 +1,68 @@
-/* === ПУНКТ 4.2: ДЕСКТОП (Точно по макету Figma) === */
+/* === ПУНКТ 4.2: ДЕСКТОП (ЖОРСТКЕ ПЕРЕЗАВАНТАЖЕННЯ СІТКИ) === */
 @media screen and (min-width: 992px) {
-    /* Робимо 2 колонки: 25% зліва, 75% справа */
+    /* 1. Головний контейнер */
     .catalog_inner {
         display: flex !important;
+        flex-wrap: wrap !important; /* Дозволяємо тексту і пагінації падати вниз */
         align-items: flex-start !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        flex-wrap: wrap !important; /* Дозволяє блокам падати вниз, якщо треба */
     }
 
-    /* Фільтри зліва */
+    /* 2. Ліва колонка (Фільтри) */
     .filters {
         width: 25% !important;
+        flex-shrink: 0 !important;
         display: block !important;
         position: static !important;
     }
 
-    /* Ховаємо мобільну кнопку */
+    /* Ховаємо мобільну кнопку на ПК */
     .brands__filter-btn-mobile {
         display: none !important;
     }
 
-    /* Права частина (Товари + текст) */
+    /* 3. Права колонка (Суворий контейнер для товарів) */
     .catalog-right {
-        width: 72% !important; /* Залишаємо місце для відступу */
-        margin: 0 !important;
+        width: 72% !important;
+        margin-left: 3% !important; /* Відступ від фільтрів */
         display: flex !important;
-        flex-direction: column !important; /* Змушуємо все йти суворо зверху вниз */
+        flex-direction: column !important; /* Вишиковуємо вміст суворо зверху вниз */
     }
 
-    /* Шапка з тегами "Чоловічі" і Сортуванням */
+    /* 4. Примусово ставимо сортування НА САМИЙ ВЕРХ правої колонки */
     .catalog-right_heading {
+        order: 1 !important; /* Перше місце! */
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        margin-bottom: 30px !important;
         width: 100% !important;
+        margin-bottom: 30px !important;
     }
 
-    /* Сітка товарів: суворо 3 в ряд */
+    /* 5. Примусово ставимо сітку карток ПІД сортуванням */
     .cards.catalog-cards {
+        order: 2 !important; /* Друге місце! */
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Точно 3 в ряд */
         gap: 20px !important;
         width: 100% !important;
-        margin: 0 0 40px 0 !important; /* Відступ знизу до пагінації */
     }
 
     .card {
         width: 100% !important;
-        max-width: 100% !important;
         margin: 0 !important;
     }
-    
-    /* Будь-які блоки після карток (пагінація, SEO текст) розтягуємо на 100% */
-    .catalog-right > div:not(.catalog-right_heading):not(.cards) {
+
+    /* 6. Якщо пагінація і текст лежать всередині правої колонки - опускаємо їх під картки */
+    .catalog-right > *:not(.catalog-right_heading):not(.cards) {
+        order: 3 !important; /* Третє місце (самий низ) */
         width: 100% !important;
-        text-align: left;
+        margin-top: 30px !important;
+    }
+
+    /* 7. Якщо текст випав з правої колонки і гуляє сам по собі - розтягуємо на всю ширину знизу */
+    .catalog_inner > *:not(.filters):not(.catalog-right) {
+        width: 100% !important;
+        margin-top: 40px !important;
+        order: 99 !important; /* Завжди в самому кінці сторінки */
     }
 }
