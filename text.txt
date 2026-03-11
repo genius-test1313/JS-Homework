@@ -1,11 +1,12 @@
-/* Лечим кнопки "Тип оцінки", чтобы они не вылезали за экран 320px */
+@media screen and (max-width: 420px) {
     .evaluation__type-options, 
     .contact-country .evaluation__type-options {
-        flex-wrap: wrap !important; /* Разрешаем кнопкам переноситься */
-        gap: 10px !important; 
-        justify-content: center !important; 
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        justify-content: center !important;
     }
 
     .evaluation__type-label {
-        flex-grow: 1 !important; /* Пусть красиво заполняют пустоты */
+        flex-grow: 1 !important;
     }
+}
