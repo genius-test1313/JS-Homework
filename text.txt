@@ -1,8 +1,7 @@
-/* === ЛИКУЕМ НАЕЗД ТЕКСТА === */
-@media screen and (max-width: 991px) {
-  .cta-price-block {
-    height: auto !important;
-    min-height: auto !important;
-    padding-bottom: 50px !important;
-  }
+/* === Рятуємо кнопку "Оцінити", щоб не вилазила за екран === */
+@media screen and (max-width: 420px) {
+    .cta-price-btn {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
 }
