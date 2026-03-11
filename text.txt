@@ -43,3 +43,21 @@
     color: #282828 !important; /* Темно-серый цвет текста */
     text-decoration: none;
 }
+
+
+
+
+
+
+js
+
+/* --- ПУНКТ 2а: Аккордеон в мобильном меню --- */
+$(document).ready(function() {
+    $('.accordion-toggle').on('click', function() {
+        // Плавно открываем или закрываем список подпунктов (скорость 300мс)
+        $(this).next('.accordion-content').slideToggle(300);
+        
+        // Переворачиваем галочку
+        $(this).find('.accordion-arrow').toggleClass('active');
+    });
+});
