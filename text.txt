@@ -1,63 +1,22 @@
-/* === ПУНКТ 2а: Выпадающее меню (Аккордеон) === */
-.mobile-accordion-block {
-    width: 100%;
-    /* Добавляем полосочку снизу, если она нужна по дизайну */
-    border-bottom: 1px solid rgba(0,0,0,0.05); 
+/* === ПУНКТ 2б: Меню помещается в экран (без скролла) === */
+@media screen and (max-height: 700px) {
+    /* Если телефон "короткий" по высоте, сжимаем отступы */
+    .mobile-header-menu-item, 
+    .accordion-toggle {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Уменьшаем отступ над соцсетями и телефоном */
+    .mobile-header-bottom {
+        margin-top: 15px !important;
+        padding-bottom: 20px !important;
+    }
 }
 
-.accordion-toggle {
-    display: flex !important;
-    justify-content: space-between !important; /* Расталкиваем текст и галочку по краям */
-    align-items: center !important;
-    cursor: pointer;
-    width: 100%;
+/* Жестко фиксируем меню на 100% высоты экрана (особенно важно для iPhone) */
+.header__top-mobile {
+    height: 100vh !important; /* Старый стандарт */
+    height: 100dvh !important; /* Новый стандарт для мобильных браузеров */
+    overflow-y: auto; /* Разрешаем внутренний скролл только если открыли все аккордеоны разом */
 }
-
-.accordion-arrow {
-    font-size: 12px;
-    transition: transform 0.3s ease; /* Плавная анимация переворота */
-}
-
-/* Класс, который будет добавлять скрипт при клике */
-.accordion-arrow.active {
-    transform: rotate(180deg); /* Переворачиваем галочку вверх ногами */
-}
-
-.accordion-content {
-    display: none; /* МАГИЯ: Прячем подпункты по умолчанию! */
-    list-style: none;
-    padding: 10px 0 15px 20px !important; /* Делаем аккуратный отступ слева */
-    margin: 0;
-}
-
-.accordion-content li {
-    margin-bottom: 15px;
-}
-
-.accordion-content li:last-child {
-    margin-bottom: 0;
-}
-
-.accordion-content a {
-    font-size: 14px !important; /* Подпункты делаем чуть меньше главных */
-    color: #282828 !important; /* Темно-серый цвет текста */
-    text-decoration: none;
-}
-
-
-
-
-
-
-js
-
-/* --- ПУНКТ 2а: Аккордеон в мобильном меню --- */
-$(document).ready(function() {
-    $('.accordion-toggle').on('click', function() {
-        // Плавно открываем или закрываем список подпунктов (скорость 300мс)
-        $(this).next('.accordion-content').slideToggle(300);
-        
-        // Переворачиваем галочку
-        $(this).find('.accordion-arrow').toggleClass('active');
-    });
-});
