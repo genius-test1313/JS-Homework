@@ -1,23 +1,43 @@
-/* === ПУНКТ 3: Картинки "Про нас" СТРОГО ПО МОБИЛЬНОМУ МАКЕТУ === */
-@media screen and (max-width: 767px) {
-    .about-image-wrapper {
-        width: 100% !important; /* На всю ширину экрана */
-        margin-bottom: 20px !important; /* Отступ вниз до текста */
-        padding: 0 !important; /* Убираем лишние отступы по бокам, если они есть */
+/* === ПУНКТ 4: Оживляем мобильные фильтры === */
+@media screen and (max-width: 991px) {
+    .filters {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Полностью прячем за левый край */
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 1000;
+        transition: all 0.4s ease; /* Плавное появление */
+        overflow-y: auto;
+        padding: 20px;
     }
 
-    .about-image-wrapper img {
-        width: 100% !important;
-        height: auto !important; /* Пусть высота подстраивается под ширину */
-        aspect-ratio: 392 / 400 !important; /* Сохраняем ту самую пропорцию из Фигмы */
-        object-fit: cover !important; /* Чтобы картинка заполняла всё пространство без искажений */
-        display: block;
+    /* Когда добавляем этот класс через JS, фильтры выезжают */
+    .filters.active {
+        left: 0;
     }
-    
-    /* Если в HTML есть родительский контейнер, который мешает картинкам быть на всю ширину */
-    .about-images { 
-        display: flex !important;
-        flex-direction: column !important; /* Выстраиваем всё в одну колонку */
-        align-items: center !important;
-    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Код для открытия фильтров
+const filterBtn = document.querySelector('.brands__filter-btn-mobile');
+const filterPanel = document.querySelector('.filters');
+
+if (filterBtn && filterPanel) {
+    filterBtn.addEventListener('click', function() {
+        filterPanel.classList.toggle('active');
+        // Запрещаем скролл сайта, когда открыты фильтры
+        document.body.classList.toggle('no-scroll');
+    });
 }
