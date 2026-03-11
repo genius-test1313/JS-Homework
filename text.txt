@@ -1,37 +1,46 @@
-/* === ПУНКТ 2б: Меню помещается в экран (супер-пресс для iPhone SE) === */
+/* === ПУНКТ 2б: ЯДЕРНЫЙ ПРЕСС для высоты меню (до 700px) === */
 @media screen and (max-height: 700px) {
-    /* Сжимаем верхние 4 больших пункта (Продаж годинників и т.д.) */
+    
+    /* 1. Убиваем флекс-дыры (gap) в главных контейнерах меню */
+    .header__top-mobile, 
+    .header__bottom,
+    .mobile-header-bottom {
+        gap: 0 !important; 
+        justify-content: flex-start !important; /* Запрещаем расталкивать элементы */
+    }
+
+    /* 2. Жестко режем высоту 4-х кнопок с иконками (Продаж...) */
     .header__bottom-item {
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
-        min-height: auto !important; /* Убиваем жесткую высоту, если она была */
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 0 !important;
+        min-height: 35px !important; /* Делаем их компактнее */
     }
     
-    /* Уменьшаем отступы у слов Каталог, Інформація, Контакти */
+    /* Чуть уменьшаем сами иконки часов/колец, чтобы сэкономить место */
+    .header__bottom-item-icon {
+        max-width: 18px !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* 3. Сжимаем аккордеон (Каталог, Інформація, Контакти) */
     .mobile-header-menu-item, 
     .accordion-toggle {
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        margin: 0 !important;
     }
 
-    /* Подтягиваем нижний блок с телефоном и соцсетями повыше */
+    /* 4. Подтягиваем самый низ (соцсети и телефон) */
     .mobile-header-bottom {
-        margin-top: 10px !important;
-        padding-top: 10px !important;
-        padding-bottom: 15px !important;
-    }
-
-    /* Немного уменьшаем отступы в самой верхней полоске (валюты/языки) */
-    .header__top-geo-mobile {
+        margin-top: 5px !important;
         padding-top: 10px !important;
         padding-bottom: 10px !important;
     }
-}
-
-/* Фиксируем высоту и разрешаем скролл ТОЛЬКО если человек сам откроет аккордеоны */
-.header__top-mobile {
-    height: 100vh !important;
-    height: 100dvh !important;
-    overflow-y: auto !important; 
-    padding-bottom: 20px !important; /* Небольшой запас снизу */
+    
+    /* 5. Уменьшаем шапку с языками */
+    .header__top-geo-mobile {
+        padding-bottom: 5px !important;
+        margin-bottom: 5px !important;
+    }
 }
