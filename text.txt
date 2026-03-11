@@ -1,41 +1,63 @@
-/* === ПУНКТ 4.1: Рятуємо зламану сітку каталогу на мобілці === */
+/* === ПУНКТ 4.1: Рятуємо сітку каталогу та сортування === */
 @media screen and (max-width: 991px) {
-    /* Змушуємо головний контейнер не вилазити за екран */
+    /* 1. Вбиваємо порожнє місце зліва */
     .catalog_inner {
         display: block !important;
         width: 100% !important;
-        padding: 0 15px !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important; 
+        padding: 0 !important;
+        overflow: hidden !important; 
     }
 
-    /* Права частина з товарами тепер займає всю ширину */
     .catalog-right {
         width: 100% !important;
+        max-width: 100% !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 0 15px !important;
+        float: none !important; /* Відключаємо старі флоати, якщо вони є */
     }
 
-    /* Вишиковуємо картки товарів у красиву колонку */
+    /* 2. Робимо красивою шапку з тегами і сортуванням */
+    .catalog-right_heading {
+        display: flex !important;
+        flex-direction: column !important; /* Ставимо їх один під одним */
+        align-items: flex-start !important;
+        gap: 15px !important;
+        margin-bottom: 25px !important;
+        width: 100% !important;
+    }
+
+    /* Активні фільтри (напр. "Чоловічі х") */
+    .active-filters {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    /* Випадашка сортування */
+    .catalog-right-sort {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 3. Вирівнюємо самі товари */
     .cards.catalog-cards {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         width: 100% !important;
-        gap: 20px !important; 
-        margin-top: 20px !important;
+        gap: 20px !important;
+        margin: 0 !important;
     }
 
-    /* Робимо саму картку адаптивною */
     .card {
         width: 100% !important;
-        max-width: 350px !important; 
+        max-width: 350px !important;
         margin: 0 auto !important;
     }
 
     .card img {
         width: 100% !important;
         height: auto !important;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
