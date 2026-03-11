@@ -1,22 +1,37 @@
-/* === ПУНКТ 2б: Меню помещается в экран (без скролла) === */
+/* === ПУНКТ 2б: Меню помещается в экран (супер-пресс для iPhone SE) === */
 @media screen and (max-height: 700px) {
-    /* Если телефон "короткий" по высоте, сжимаем отступы */
+    /* Сжимаем верхние 4 больших пункта (Продаж годинників и т.д.) */
+    .header__bottom-item {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        min-height: auto !important; /* Убиваем жесткую высоту, если она была */
+    }
+    
+    /* Уменьшаем отступы у слов Каталог, Інформація, Контакти */
     .mobile-header-menu-item, 
     .accordion-toggle {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    /* Подтягиваем нижний блок с телефоном и соцсетями повыше */
+    .mobile-header-bottom {
+        margin-top: 10px !important;
+        padding-top: 10px !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* Немного уменьшаем отступы в самой верхней полоске (валюты/языки) */
+    .header__top-geo-mobile {
         padding-top: 10px !important;
         padding-bottom: 10px !important;
     }
-
-    /* Уменьшаем отступ над соцсетями и телефоном */
-    .mobile-header-bottom {
-        margin-top: 15px !important;
-        padding-bottom: 20px !important;
-    }
 }
 
-/* Жестко фиксируем меню на 100% высоты экрана (особенно важно для iPhone) */
+/* Фиксируем высоту и разрешаем скролл ТОЛЬКО если человек сам откроет аккордеоны */
 .header__top-mobile {
-    height: 100vh !important; /* Старый стандарт */
-    height: 100dvh !important; /* Новый стандарт для мобильных браузеров */
-    overflow-y: auto; /* Разрешаем внутренний скролл только если открыли все аккордеоны разом */
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow-y: auto !important; 
+    padding-bottom: 20px !important; /* Небольшой запас снизу */
 }
