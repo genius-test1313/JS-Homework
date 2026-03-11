@@ -1,36 +1,7 @@
-/* Запуск слайдера "Варте уваги" */
-const similarSlider = document.querySelector('.similar-slider');
-if (similarSlider) {
-    new Swiper('.similar-slider', {
-        slidesPerView: 1.2,
-        spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            }
-        }
-    });
-}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
 
 
 
 
-
-
-/* Стилі для слайдера "Варте уваги" */
-.similar-slider {
-    padding-bottom: 40px !important;
-    overflow: hidden !important;
-    width: 100% !important;
-}
-
-.similar-slider .swiper-slide {
-    height: auto !important;
-}
