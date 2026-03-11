@@ -5,3 +5,9 @@
         margin-bottom: 100px !important;  /* Внешний отступ до следующего блока */
     }
 }
+
+
+
+
+
+https://docs.google.com/document/d/1cNCs9fngOFwqjm-op2GtpNYfHQ0Vz79yyBMNN8MAcsM/edit?usp=sharing
