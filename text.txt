@@ -1,46 +1,11 @@
-/* --- ПУНКТ: МОБИЛЬНАЯ ВЕРСИЯ (Адаптив для экранов 420px и 320px) --- */
-
-/* Глобально убиваем горизонтальный скролл на всем сайте */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; 
-}
-
-/* Все правила внутри этих скобок сработают ТОЛЬКО на мобильных телефонах */
-@media screen and (max-width: 420px) {
-    
-    /* 1. Картинки не вылезают за края */
-    img, video, iframe {
-        max-width: 100% !important;
-        height: auto;
-    }
-    
-    /* 2. Запрещаем длинным словам разрывать экран */
-    h1, h2, h3, .heading__title {
-        word-break: break-word !important;
-        overflow-wrap: break-word !important;
+/* Лечим кнопки "Тип оцінки", чтобы они не вылезали за экран 320px */
+    .evaluation__type-options, 
+    .contact-country .evaluation__type-options {
+        flex-wrap: wrap !important; /* Разрешаем кнопкам переноситься */
+        gap: 10px !important; 
+        justify-content: center !important; 
     }
 
-    /* 3. Формы и инпуты строго слушаются ширины экрана */
-    input, textarea, select, .contact-right-form, .evaluation-form {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+    .evaluation__type-label {
+        flex-grow: 1 !important; /* Пусть красиво заполняют пустоты */
     }
-
-    /* 4. Уменьшаем огромные шрифты (лечим слово ГОДИННИКИ) */
-    h1, .heading__title, .hero-title {
-        font-size: 40px !important; 
-        line-height: 48px !important;
-    }
-    h2, .section-title {
-        font-size: 32px !important;
-    }
-
-    /* 5. Наши любимые "падингтоны" (отступы по бокам) */
-    .container, .main-wrapper {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-}
