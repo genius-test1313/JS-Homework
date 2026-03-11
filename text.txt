@@ -1,26 +1,45 @@
-<div class="mobile-accordion-block">
-    <div class="mobile-header-menu-item accordion-toggle">
-        Каталог товарів
-        <span class="accordion-arrow">▼</span>
-    </div>
-    <ul class="accordion-content">
-        <li><a href="watches.html">Годинники</a></li>
-        <li><a href="jewerly.html">Прикраси</a></li>
-        <li><a href="diamonds.html">Діаманти</a></li>
-    </ul>
-</div>
-<div class="mobile-accordion-block">
-    <div class="mobile-header-menu-item accordion-toggle">
-        Інформація
-        <span class="accordion-arrow">▼</span>
-    </div>
-    <ul class="accordion-content">
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="lombard.html">Ломбард</a></li>
-        <li><a href="brands.html">Бренди</a></li>
-        <li><a href="#">Послуги</a></li>
-        <li><a href="reviews.html">Відгуки</a></li>
-        <li><a href="blog.html">Блог</a></li>
-        <li><a href="about.html">Про нас</a></li>
-    </ul>
-</div>
+/* === ПУНКТ 2а: Выпадающее меню (Аккордеон) === */
+.mobile-accordion-block {
+    width: 100%;
+    /* Добавляем полосочку снизу, если она нужна по дизайну */
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
+}
+
+.accordion-toggle {
+    display: flex !important;
+    justify-content: space-between !important; /* Расталкиваем текст и галочку по краям */
+    align-items: center !important;
+    cursor: pointer;
+    width: 100%;
+}
+
+.accordion-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease; /* Плавная анимация переворота */
+}
+
+/* Класс, который будет добавлять скрипт при клике */
+.accordion-arrow.active {
+    transform: rotate(180deg); /* Переворачиваем галочку вверх ногами */
+}
+
+.accordion-content {
+    display: none; /* МАГИЯ: Прячем подпункты по умолчанию! */
+    list-style: none;
+    padding: 10px 0 15px 20px !important; /* Делаем аккуратный отступ слева */
+    margin: 0;
+}
+
+.accordion-content li {
+    margin-bottom: 15px;
+}
+
+.accordion-content li:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content a {
+    font-size: 14px !important; /* Подпункты делаем чуть меньше главных */
+    color: #282828 !important; /* Темно-серый цвет текста */
+    text-decoration: none;
+}
