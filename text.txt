@@ -1,43 +1,76 @@
-/* === ПУНКТ 4: Оживляем мобильные фильтры === */
+/* === ПУНКТ 4: Мобільні фільтри (ФІНАЛ) === */
 @media screen and (max-width: 991px) {
+    /* 1. Ховаємо панель фільтрів за лівий край екрану */
     .filters {
-        position: fixed;
+        position: fixed !important;
         top: 0;
-        left: -100%; /* Полностью прячем за левый край */
-        width: 100%;
-        height: 100vh;
-        background: #fff;
-        z-index: 1000;
-        transition: all 0.4s ease; /* Плавное появление */
+        left: -100% !important; /* Саме це ховає панель */
+        width: 100% !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        z-index: 9999 !important; /* Поверх усього сайту */
+        transition: left 0.4s ease; /* Плавний виїзд */
         overflow-y: auto;
+        display: block !important;
         padding: 20px;
     }
 
-    /* Когда добавляем этот класс через JS, фильтры выезжают */
+    /* 2. Коли JS додасть клас .active, панель виїде на екран */
     .filters.active {
-        left: 0;
+        left: 0 !important;
+    }
+
+    /* 3. Робимо кнопку "Filters" красивою і клікабельною */
+    .brands__filter-btn-mobile {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        font-weight: 600;
+        border-radius: 4px;
+    }
+    
+    /* 4. Додаємо візуальний хрестик до слова "Filters" всередині панелі, щоб її можна було закрити */
+    .filters__heading-title {
+        cursor: pointer;
+        display: inline-block;
+    }
+    .filters__heading-title::after {
+        content: " ✕"; 
+        color: #ff0000;
+        margin-left: 10px;
     }
 }
 
 
 
 
+js
 
+// === ПУНКТ 4: Скрипт для відкриття/закриття мобільних фільтрів ===
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtn = document.querySelector('.brands__filter-btn-mobile');
+    const filterPanel = document.querySelector('.filters');
+    // Беремо заголовок панелі як кнопку для закриття
+    const closeBtn = document.querySelector('.filters__heading-title'); 
 
+    if (filterBtn && filterPanel) {
+        // Відкрити фільтри по кліку на кнопку
+        filterBtn.addEventListener('click', function() {
+            filterPanel.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Забороняємо скрол фону
+        });
+    }
 
-
-
-
-
-
-// Код для открытия фильтров
-const filterBtn = document.querySelector('.brands__filter-btn-mobile');
-const filterPanel = document.querySelector('.filters');
-
-if (filterBtn && filterPanel) {
-    filterBtn.addEventListener('click', function() {
-        filterPanel.classList.toggle('active');
-        // Запрещаем скролл сайта, когда открыты фильтры
-        document.body.classList.toggle('no-scroll');
-    });
-}
+    if (closeBtn && filterPanel) {
+        // Закрити фільтри по кліку на заголовок з хрестиком
+        closeBtn.addEventListener('click', function() {
+            filterPanel.classList.remove('active');
+            document.body.style.overflow = ''; // Повертаємо скрол фону
+        });
+    }
+});
