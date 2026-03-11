@@ -10,3 +10,40 @@
         flex-grow: 1 !important;
     }
 }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 420px) {
+    /* Жестко ставим в один ряд и уменьшаем расстояние между ними */
+    .evaluation__type-options, 
+    .contact-country .evaluation__type-options {
+        flex-wrap: nowrap !important; /* Запрещаем перенос! */
+        gap: 5px !important; /* Минимальный отступ между кнопками */
+        justify-content: space-between !important;
+    }
+
+    /* Каждой кнопке даем ровно треть ширины */
+    .evaluation__type-label {
+        width: 32% !important;
+        flex-grow: 1 !important;
+    }
+
+    /* Уменьшаем текст и "падингтоны" ВНУТРИ самих кнопок, чтобы слова влезли */
+    .evaluation__type-btn {
+        font-size: 11px !important; /* Делаем шрифт меньше */
+        padding: 8px 2px !important; /* Сжимаем боковые отступы */
+        white-space: nowrap !important; /* Запрещаем слову ломаться пополам */
+        justify-content: center !important;
+    }
+
+    /* Немного уменьшаем иконки в кнопках */
+    .evaluation__type-icon {
+        max-width: 14px !important;
+        margin-right: 4px !important;
+    }
+}
