@@ -1,14 +1,109 @@
-/* === ПУНКТ: Лендінги (Рятуємо всі зображення в контенті від спотворення) === */
-@media screen and (max-width: 991px) {
-    .about__left-img,
-    .about_mobile_images img,
-    .reasons__block-img,
-    .blog-post-img img,
-    .blog__list-img-wrapper img,
-    .lombard__list-img,
-    .article-content img {
-        height: auto !important;
-        object-fit: cover !important;
-        border-radius: 8px; /* Заодно зробимо їм красиві краї, якщо їх не було */
-    }
+<section class="similar" id="similar">
+    <div class="container">
+        <h2 class="similar__title">Схожі статті</h2>
+        
+        <div class="blog__list swiper similar-blog-slider">
+            <div class="swiper-wrapper">
+                
+                <div class="blog__list-item swiper-slide">
+                    <div class="blog__list-img-wrapper">
+                        <img src="assets/img/blog_img4.png" alt="">
+                    </div>
+                    <div class="blog__list-item-wrapper">
+                        <h6 class="blog__list-item-date">23.11.2022</h6>
+                        <h4 class="blog__list-item-title">Новинка у годинниковому мистецтві від Louis Vuitton</h4>
+                        <p class="blog__list-item-text">На початку поточного століття компанія Louis Vuitton –
+                            виробник наручного годинника представив свій перший шедевр, який відразу ж полюбився
+                            багатьма людьми, які цінують красиві, стильні речі.</p>
+                        <a href="#" class="blog__list-item-see">Читати повністю</a>
+                    </div>
+                </div>
+
+                <div class="blog__list-item swiper-slide">
+                    <div class="blog__list-img-wrapper">
+                        <img src="assets/img/blog_img5.png" alt="">
+                    </div>
+                    <div class="blog__list-item-wrapper">
+                        <h6 class="blog__list-item-date">23.11.2022</h6>
+                        <h4 class="blog__list-item-title">Новинка у годинниковому мистецтві від Louis Vuitton</h4>
+                        <p class="blog__list-item-text">На початку поточного століття компанія Louis Vuitton –
+                            виробник наручного годинника представив свій перший шедевр, який відразу ж полюбився
+                            багатьма людьми, які цінують красиві, стильні речі.</p>
+                        <a href="#" class="blog__list-item-see">Читати повністю</a>
+                    </div>
+                </div>
+
+                <div class="blog__list-item swiper-slide">
+                    <div class="blog__list-img-wrapper">
+                        <img src="assets/img/blog_img6.png" alt="">
+                    </div>
+                    <div class="blog__list-item-wrapper">
+                        <h6 class="blog__list-item-date">23.11.2022</h6>
+                        <h4 class="blog__list-item-title">Новинка у годинниковому мистецтві від Louis Vuitton</h4>
+                        <p class="blog__list-item-text">На початку поточного століття компанія Louis Vuitton –
+                            виробник наручного годинника представив свій перший шедевр, який відразу ж полюбився
+                            багатьма людьми, які цінують красиві, стильні речі.</p>
+                        <a href="#" class="blog__list-item-see">Читати повністю</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+js
+
+/* Запуск слайдера "Схожі статті" на сторінці блогу */
+const similarBlogSlider = document.querySelector('.similar-blog-slider');
+if (similarBlogSlider) {
+    new Swiper('.similar-blog-slider', {
+        slidesPerView: 1.1, /* На мобілці показуємо 1 цілу статтю і шматочок наступної */
+        spaceBetween: 20,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 3, /* На десктопі показуємо 3 статті */
+                spaceBetween: 30,
+            }
+        }
+    });
+}
+
+
+
+
+
+
+css
+
+/* === ПУНКТ: Слайдер "Схожі статті" === */
+.similar-blog-slider {
+    padding-bottom: 50px !important; /* Відступ для крапочок */
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.similar-blog-slider .swiper-wrapper {
+    align-items: stretch; /* Щоб картки були однакової висоти */
+}
+
+.similar-blog-slider .blog__list-item {
+    height: auto !important; /* Дозволяємо карткам тягнутися по висоті контенту */
 }
