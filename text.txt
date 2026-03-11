@@ -1,4 +1,9 @@
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js" type="text/javascript"></script>
-</body>
+/* === ПУНКТ 5: Вирівнюємо головне фото товару (щоб не спотворювалося) === */
+.product-image-top {
+    width: 100% !important;
+    height: auto !important; /* Це збиває жорстку висоту, яка плющить картинку */
+    max-height: 60vh !important; /* Обмежуємо висоту, щоб фото не було гігантським */
+    object-fit: contain !important; /* Магія: картинка вписується рівно і без спотворень */
+    display: block !important;
+    margin: 0 auto !important; /* Центруємо про всяк випадок */
+}
