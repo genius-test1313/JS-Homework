@@ -1,58 +1,61 @@
-/* === ПУНКТ 4.1: Фінальне вирівнювання каталогу та сортування === */
-@media screen and (max-width: 991px) {
+/* === ПУНКТ 4.2: ДЕСКТОП (Точно по макету Figma) === */
+@media screen and (min-width: 992px) {
+    /* Робимо 2 колонки: 25% зліва, 75% справа */
     .catalog_inner {
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        flex-wrap: wrap !important; /* Дозволяє блокам падати вниз, якщо треба */
+    }
+
+    /* Фільтри зліва */
+    .filters {
+        width: 25% !important;
         display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        overflow: hidden !important; 
+        position: static !important;
     }
 
+    /* Ховаємо мобільну кнопку */
+    .brands__filter-btn-mobile {
+        display: none !important;
+    }
+
+    /* Права частина (Товари + текст) */
     .catalog-right {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 72% !important; /* Залишаємо місце для відступу */
         margin: 0 !important;
-        padding: 0 15px !important;
-        float: none !important;
+        display: flex !important;
+        flex-direction: column !important; /* Змушуємо все йти суворо зверху вниз */
     }
 
+    /* Шапка з тегами "Чоловічі" і Сортуванням */
     .catalog-right_heading {
         display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 15px !important;
-        margin-bottom: 25px !important;
-        width: 100% !important;
-    }
-
-    .active-filters {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-    }
-
-    .catalog-right-sort {
-        margin: 0 !important;
-        width: 100% !important;
-    }
-
-    .cards.catalog-cards {
-        display: flex !important;
-        flex-direction: column !important;
+        justify-content: space-between !important;
         align-items: center !important;
+        margin-bottom: 30px !important;
         width: 100% !important;
+    }
+
+    /* Сітка товарів: суворо 3 в ряд */
+    .cards.catalog-cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
-        margin: 0 !important;
+        width: 100% !important;
+        margin: 0 0 40px 0 !important; /* Відступ знизу до пагінації */
     }
 
     .card {
         width: 100% !important;
-        max-width: 350px !important;
-        margin: 0 auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
-
-    .card img {
+    
+    /* Будь-які блоки після карток (пагінація, SEO текст) розтягуємо на 100% */
+    .catalog-right > div:not(.catalog-right_heading):not(.cards) {
         width: 100% !important;
-        height: auto !important;
-        object-fit: contain;
+        text-align: left;
     }
 }
