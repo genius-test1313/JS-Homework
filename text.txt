@@ -1,17 +1,23 @@
-/* === ПУНКТ 3: Картинки "Про нас" СТРОГО ПО МАКЕТУ (392x400) === */
+/* === ПУНКТ 3: Картинки "Про нас" СТРОГО ПО МОБИЛЬНОМУ МАКЕТУ === */
 @media screen and (max-width: 767px) {
     .about-image-wrapper {
-        display: block !important;
-        width: 100% !important;
-        margin-bottom: 20px; /* Отступ между блоками как в Figma */
+        width: 100% !important; /* На всю ширину экрана */
+        margin-bottom: 20px !important; /* Отступ вниз до текста */
+        padding: 0 !important; /* Убираем лишние отступы по бокам, если они есть */
     }
 
     .about-image-wrapper img {
         width: 100% !important;
-        /* Высчитываем точное соотношение сторон из макета (400 / 392) */
-        aspect-ratio: 392 / 400 !important; 
-        object-fit: cover !important; /* Чтобы картинка не сжималась, а красиво заполняла блок */
+        height: auto !important; /* Пусть высота подстраивается под ширину */
+        aspect-ratio: 392 / 400 !important; /* Сохраняем ту самую пропорцию из Фигмы */
+        object-fit: cover !important; /* Чтобы картинка заполняла всё пространство без искажений */
         display: block;
-        border-radius: 0px; /* Судя по макету, углы острые */
+    }
+    
+    /* Если в HTML есть родительский контейнер, который мешает картинкам быть на всю ширину */
+    .about-images { 
+        display: flex !important;
+        flex-direction: column !important; /* Выстраиваем всё в одну колонку */
+        align-items: center !important;
     }
 }
