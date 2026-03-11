@@ -1,9 +1,85 @@
-/* === ПУНКТ 5: Вирівнюємо головне фото товару (щоб не спотворювалося) === */
-.product-image-top {
-    width: 100% !important;
-    height: auto !important; /* Це збиває жорстку висоту, яка плющить картинку */
-    max-height: 60vh !important; /* Обмежуємо висоту, щоб фото не було гігантським */
-    object-fit: contain !important; /* Магія: картинка вписується рівно і без спотворень */
-    display: block !important;
-    margin: 0 auto !important; /* Центруємо про всяк випадок */
-}
+<section class="featured" id="featured">
+    <h2 class="featured__title">Варте уваги</h2>
+    
+    <div class="cards swiper similar-slider">
+        <div class="swiper-wrapper">
+
+            <div class="card swiper-slide">
+                <img src="assets/img/card_1.png" alt="card img" class="card__img">
+                <div class="card__img-counter">
+                    <span class="card__img-span"></span>
+                    <span class="card__img-span card__img-span--active"></span>
+                </div>
+                <p class="card__stock">в наявності</p>
+                <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
+                <p class="card__subtitle">Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)</p>
+                <div class="card__bottom">
+                    <a href="#" class="card__bottom-details">Детальніше</a>
+                    <div class="card__price-row">
+                        <p class="card__currency">USD</p>
+                        <img src="assets/img/card_currency_icon.svg" alt="currency icon" class="card__currency-icon">
+                        <p class="card__price">5 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card swiper-slide">
+                <img src="assets/img/card_2.png" alt="card img" class="card__img">
+                <div class="card__img-counter">
+                    <span class="card__img-span"></span>
+                    <span class="card__img-span card__img-span--active"></span>
+                </div>
+                <p class="card__stock">в наявності</p>
+                <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
+                <p class="card__subtitle">Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)</p>
+                <div class="card__bottom">
+                    <a href="#" class="card__bottom-details">Детальніше</a>
+                    <div class="card__price-row">
+                        <p class="card__currency">USD</p>
+                        <img src="assets/img/card_currency_icon.svg" alt="currency icon" class="card__currency-icon">
+                        <p class="card__price">5 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card swiper-slide">
+                <img src="assets/img/card_3.png" alt="card img" class="card__img">
+                <div class="card__img-counter">
+                    <span class="card__img-span"></span>
+                    <span class="card__img-span card__img-span--active"></span>
+                </div>
+                <p class="card__stock">в наявності</p>
+                <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
+                <p class="card__subtitle">Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)</p>
+                <div class="card__bottom">
+                    <a href="#" class="card__bottom-details">Детальніше</a>
+                    <div class="card__price-row">
+                        <p class="card__currency">USD</p>
+                        <img src="assets/img/card_currency_icon.svg" alt="currency icon" class="card__currency-icon">
+                        <p class="card__price">5 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card swiper-slide">
+                <img src="assets/img/card_4.png" alt="card img" class="card__img">
+                <div class="card__img-counter">
+                    <span class="card__img-span"></span>
+                    <span class="card__img-span card__img-span--active"></span>
+                </div>
+                <p class="card__stock">в наявності</p>
+                <h5 class="card__title">Audemars Piguet Royal Oak</h5>
+                <p class="card__subtitle">Audemars Piguet Royal Oak, 41 mm, Automatic movement</p>
+                <div class="card__bottom">
+                    <a href="#" class="card__bottom-details">Детальніше</a>
+                    <div class="card__price-row">
+                        <p class="card__currency">USD</p>
+                        <img src="assets/img/card_currency_icon.svg" alt="currency icon" class="card__currency-icon">
+                        <p class="card__price">28 700</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <div class="swiper-pagination"></div>
+    </div>
+</section>
