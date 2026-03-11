@@ -1,7 +1,14 @@
-/* === Рятуємо кнопку "Оцінити", щоб не вилазила за екран === */
-@media screen and (max-width: 420px) {
-    .cta-price-btn {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+/* === ПУНКТ: Лендінги (Рятуємо всі зображення в контенті від спотворення) === */
+@media screen and (max-width: 991px) {
+    .about__left-img,
+    .about_mobile_images img,
+    .reasons__block-img,
+    .blog-post-img img,
+    .blog__list-img-wrapper img,
+    .lombard__list-img,
+    .article-content img {
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 8px; /* Заодно зробимо їм красиві краї, якщо їх не було */
     }
 }
