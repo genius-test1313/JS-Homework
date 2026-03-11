@@ -1,6 +1,7 @@
-/* --- ПУНКТ 9: Отступ между брендами и Скупкой (только ПК) --- */
+/* --- ПУНКТ 9: Идеальные отступы по макету Figma (ПК) --- */
 @media screen and (min-width: 769px) {
     .brands {
-        margin-bottom: 120px !important;
+        padding-bottom: 120px !important; /* Внутренний отступ блока */
+        margin-bottom: 100px !important;  /* Внешний отступ до следующего блока */
     }
 }
