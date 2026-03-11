@@ -1,68 +1,9 @@
-/* === ПУНКТ 4.2: ДЕСКТОП (ЖОРСТКЕ ПЕРЕЗАВАНТАЖЕННЯ СІТКИ) === */
+/* === ПУНКТ 4.2: Мікро-фікс для сітки карток на ПК === */
 @media screen and (min-width: 992px) {
-    /* 1. Головний контейнер */
-    .catalog_inner {
-        display: flex !important;
-        flex-wrap: wrap !important; /* Дозволяємо тексту і пагінації падати вниз */
-        align-items: flex-start !important;
-    }
-
-    /* 2. Ліва колонка (Фільтри) */
-    .filters {
-        width: 25% !important;
-        flex-shrink: 0 !important;
-        display: block !important;
-        position: static !important;
-    }
-
-    /* Ховаємо мобільну кнопку на ПК */
-    .brands__filter-btn-mobile {
-        display: none !important;
-    }
-
-    /* 3. Права колонка (Суворий контейнер для товарів) */
-    .catalog-right {
-        width: 72% !important;
-        margin-left: 3% !important; /* Відступ від фільтрів */
-        display: flex !important;
-        flex-direction: column !important; /* Вишиковуємо вміст суворо зверху вниз */
-    }
-
-    /* 4. Примусово ставимо сортування НА САМИЙ ВЕРХ правої колонки */
-    .catalog-right_heading {
-        order: 1 !important; /* Перше місце! */
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin-bottom: 30px !important;
-    }
-
-    /* 5. Примусово ставимо сітку карток ПІД сортуванням */
     .cards.catalog-cards {
-        order: 2 !important; /* Друге місце! */
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Точно 3 в ряд */
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
         width: 100% !important;
-    }
-
-    .card {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    /* 6. Якщо пагінація і текст лежать всередині правої колонки - опускаємо їх під картки */
-    .catalog-right > *:not(.catalog-right_heading):not(.cards) {
-        order: 3 !important; /* Третє місце (самий низ) */
-        width: 100% !important;
-        margin-top: 30px !important;
-    }
-
-    /* 7. Якщо текст випав з правої колонки і гуляє сам по собі - розтягуємо на всю ширину знизу */
-    .catalog_inner > *:not(.filters):not(.catalog-right) {
-        width: 100% !important;
-        margin-top: 40px !important;
-        order: 99 !important; /* Завжди в самому кінці сторінки */
     }
 }
