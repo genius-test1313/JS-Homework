@@ -1,15 +1,46 @@
-/* Уменьшаем шрифты главных заголовков, чтобы они влезали в 320px */
-    h1, .heading__title, .hero-title {
-        font-size: 40px !important; /* Уменьшили с 60px до 40px */
-        line-height: 48px !important;
+/* --- ПУНКТ: МОБИЛЬНАЯ ВЕРСИЯ (Адаптив для экранов 420px и 320px) --- */
+
+/* Глобально убиваем горизонтальный скролл на всем сайте */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+/* Все правила внутри этих скобок сработают ТОЛЬКО на мобильных телефонах */
+@media screen and (max-width: 420px) {
+    
+    /* 1. Картинки не вылезают за края */
+    img, video, iframe {
+        max-width: 100% !important;
+        height: auto;
+    }
+    
+    /* 2. Запрещаем длинным словам разрывать экран */
+    h1, h2, h3, .heading__title {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
     }
 
+    /* 3. Формы и инпуты строго слушаются ширины экрана */
+    input, textarea, select, .contact-right-form, .evaluation-form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Уменьшаем огромные шрифты (лечим слово ГОДИННИКИ) */
+    h1, .heading__title, .hero-title {
+        font-size: 40px !important; 
+        line-height: 48px !important;
+    }
     h2, .section-title {
         font-size: 32px !important;
     }
 
-    /* Те самые "падингтоны" по бокам, чтобы текст не прилипал к краям экрана */
+    /* 5. Наши любимые "падингтоны" (отступы по бокам) */
     .container, .main-wrapper {
         padding-left: 20px !important;
         padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
+}
