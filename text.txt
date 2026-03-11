@@ -1,49 +1,22 @@
-@media screen and (max-width: 420px) {
-    .evaluation__type-options, 
-    .contact-country .evaluation__type-options {
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-        justify-content: center !important;
-    }
-
-    .evaluation__type-label {
-        flex-grow: 1 !important;
-    }
-}
-
-
-
-
-
-
-
-
-@media screen and (max-width: 420px) {
-    /* Жестко ставим в один ряд и уменьшаем расстояние между ними */
-    .evaluation__type-options, 
-    .contact-country .evaluation__type-options {
-        flex-wrap: nowrap !important; /* Запрещаем перенос! */
-        gap: 5px !important; /* Минимальный отступ между кнопками */
-        justify-content: space-between !important;
-    }
-
-    /* Каждой кнопке даем ровно треть ширины */
-    .evaluation__type-label {
-        width: 32% !important;
-        flex-grow: 1 !important;
-    }
-
-    /* Уменьшаем текст и "падингтоны" ВНУТРИ самих кнопок, чтобы слова влезли */
-    .evaluation__type-btn {
-        font-size: 11px !important; /* Делаем шрифт меньше */
-        padding: 8px 2px !important; /* Сжимаем боковые отступы */
-        white-space: nowrap !important; /* Запрещаем слову ломаться пополам */
-        justify-content: center !important;
-    }
-
-    /* Немного уменьшаем иконки в кнопках */
-    .evaluation__type-icon {
-        max-width: 14px !important;
-        margin-right: 4px !important;
-    }
-}
+<div class="mobile-accordion-block">
+    <div class="mobile-header-menu-item accordion-toggle">
+        Каталог товарів
+        <span class="accordion-arrow">▼</span>
+    </div>
+    <ul class="accordion-content">
+        <li><a href="watches.html">Годинники</a></li>
+        <li><a href="jewerly.html">Прикраси</a></li>
+        <li><a href="diamonds.html">Діаманти</a></li>
+    </ul>
+</div>
+<div class="mobile-accordion-block">
+    <div class="mobile-header-menu-item accordion-toggle">
+        Інформація
+        <span class="accordion-arrow">▼</span>
+    </div>
+    <ul class="accordion-content">
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="lombard.html">Ломбард</a></li>
+    </ul>
+</div>
